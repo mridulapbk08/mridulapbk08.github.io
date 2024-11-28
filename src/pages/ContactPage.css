@@ -1,0 +1,75 @@
+/* General Page Styling */
+.contact-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f7f8fa;
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  /* Flexbox Layout for Text and Image */
+  .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separates text and image */
+    gap: 20px; /* Adds spacing between text and image */
+  }
+  
+  /* Styling for Text Section */
+  .contact-text {
+    flex: 1; /* Text takes up 50% width */
+    max-width: 600px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .contact-text p {
+    margin-bottom: 15px;
+  }
+  
+  .contact-text a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+  
+  .contact-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styling for Image Section */
+  .contact-image {
+    flex: 1; /* Image takes up 50% width */
+    text-align: right; /* Aligns the image to the right */
+  }
+  
+  .contact-image img {
+    max-width: 60%; /* Adjusts the width to 80% of its container */
+    height: auto;   /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column; /* Stacks text and image vertically */
+      text-align: center; /* Centers the text */
+    }
+  
+    .contact-image {
+      text-align: center; /* Centers the image */
+      margin-top: 20px;
+    }
+  }
+  

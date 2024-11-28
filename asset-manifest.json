@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mridulapbk08/mridulapbk08.github.io/static/css/main.90e2deea.css",
-    "main.js": "/mridulapbk08/mridulapbk08.github.io/static/js/main.a5f63b39.js",
-    "static/js/453.acca0757.chunk.js": "/mridulapbk08/mridulapbk08.github.io/static/js/453.acca0757.chunk.js",
-    "static/media/face_mask_tracker.png": "/mridulapbk08/mridulapbk08.github.io/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
-    "static/media/social-media.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/social-media.a9f1e43e758f07c67738.webp",
-    "static/media/Mridula_Prabhakar.jpg": "/mridulapbk08/mridulapbk08.github.io/static/media/Mridula_Prabhakar.c86c2604eeaf8f10ea0c.jpg",
-    "static/media/cars.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/cars.5e3618e75f52801f0054.webp",
-    "static/media/daycare-software-system.jpg": "/mridulapbk08/mridulapbk08.github.io/static/media/daycare-software-system.88927446f69fadecd0c3.jpg",
-    "static/media/proshop.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/proshop.f24fa6fe26ca0a0d0639.webp",
-    "static/media/cloud.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/cloud.7a54692c7b5682b26d4f.webp",
-    "static/media/contact_me.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/contact_me.b47fe8d69d2069a27cda.webp",
-    "index.html": "/mridulapbk08/mridulapbk08.github.io/index.html",
-    "main.90e2deea.css.map": "/mridulapbk08/mridulapbk08.github.io/static/css/main.90e2deea.css.map",
-    "main.a5f63b39.js.map": "/mridulapbk08/mridulapbk08.github.io/static/js/main.a5f63b39.js.map",
-    "453.acca0757.chunk.js.map": "/mridulapbk08/mridulapbk08.github.io/static/js/453.acca0757.chunk.js.map"
+    "main.css": "/static/css/main.90e2deea.css",
+    "main.js": "/static/js/main.f5a880d3.js",
+    "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
+    "static/media/face_mask_tracker.png": "/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
+    "static/media/social-media.webp": "/static/media/social-media.a9f1e43e758f07c67738.webp",
+    "static/media/Mridula_Prabhakar.jpg": "/static/media/Mridula_Prabhakar.c86c2604eeaf8f10ea0c.jpg",
+    "static/media/cars.webp": "/static/media/cars.5e3618e75f52801f0054.webp",
+    "static/media/daycare-software-system.jpg": "/static/media/daycare-software-system.88927446f69fadecd0c3.jpg",
+    "static/media/proshop.webp": "/static/media/proshop.f24fa6fe26ca0a0d0639.webp",
+    "static/media/cloud.webp": "/static/media/cloud.7a54692c7b5682b26d4f.webp",
+    "static/media/contact_me.webp": "/static/media/contact_me.b47fe8d69d2069a27cda.webp",
+    "index.html": "/index.html",
+    "main.90e2deea.css.map": "/static/css/main.90e2deea.css.map",
+    "main.f5a880d3.js.map": "/static/js/main.f5a880d3.js.map",
+    "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90e2deea.css",
-    "static/js/main.a5f63b39.js"
+    "static/js/main.f5a880d3.js"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mridulapbk08/mridulapbk08.github.io/static/css/main.90e2deea.css",
-    "main.js": "/mridulapbk08/mridulapbk08.github.io/static/js/main.93446107.js",
+    "main.js": "/mridulapbk08/mridulapbk08.github.io/static/js/main.a5f63b39.js",
     "static/js/453.acca0757.chunk.js": "/mridulapbk08/mridulapbk08.github.io/static/js/453.acca0757.chunk.js",
     "static/media/face_mask_tracker.png": "/mridulapbk08/mridulapbk08.github.io/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
     "static/media/social-media.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/social-media.a9f1e43e758f07c67738.webp",
@@ -13,11 +13,11 @@
     "static/media/contact_me.webp": "/mridulapbk08/mridulapbk08.github.io/static/media/contact_me.b47fe8d69d2069a27cda.webp",
     "index.html": "/mridulapbk08/mridulapbk08.github.io/index.html",
     "main.90e2deea.css.map": "/mridulapbk08/mridulapbk08.github.io/static/css/main.90e2deea.css.map",
-    "main.93446107.js.map": "/mridulapbk08/mridulapbk08.github.io/static/js/main.93446107.js.map",
+    "main.a5f63b39.js.map": "/mridulapbk08/mridulapbk08.github.io/static/js/main.a5f63b39.js.map",
     "453.acca0757.chunk.js.map": "/mridulapbk08/mridulapbk08.github.io/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90e2deea.css",
-    "static/js/main.93446107.js"
+    "static/js/main.a5f63b39.js"
   ]
 }

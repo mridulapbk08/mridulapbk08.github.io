@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import the AOS CSS file
 import "./ConnectEngineProjectPage.css";
 
 const ConnectEngineProjectPage = () => {
+  useEffect(() => {
+    // Initialize AOS for scroll animations
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: "ease-in-out", // Animation easing
+      once: true, // Animation runs only once
+    });
+  }, []);
+
   return (
-    <div className="project-page-container">
-      <header className="project-header">
+    <div className="project-page-container" data-aos="fade-up">
+      <header className="project-header" data-aos="fade-down">
         <h1>Connect Engine</h1>
       </header>
       <div className="project-details">
-        <div className="details-section">
+        <div className="details-section" data-aos="fade-right">
           <h2>Project Overview</h2>
           <p>
             ConnectEngine is a social media platform designed for young adults and
@@ -24,7 +35,7 @@ const ConnectEngineProjectPage = () => {
           </p>
         </div>
       </div>
-      <div className="github-link">
+      <div className="github-link" data-aos="zoom-in">
         <a
           href="https://github.com/mridulapbk08/ConnectEngine-SocialMediaApplication"
           target="_blank"
@@ -33,6 +44,12 @@ const ConnectEngineProjectPage = () => {
           <img
             src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
             alt="GitHub Logo"
+            style={{
+              width: "24px",
+              height: "24px",
+              verticalAlign: "middle",
+              marginRight: "8px",
+            }}
           />
           Visit our GitHub Repository
         </a>

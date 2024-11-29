@@ -7,10 +7,9 @@
 }
 
 body {
-  background: linear-gradient(to top, #ffffff, #e5e5f7, #d1cfe4);
-  overflow-x: hidden;
+  margin: 0; /* Ensure no margin is applied to the body */
+  padding: 0;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,9 +51,9 @@ body {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 70px 20px;
-  background: linear-gradient(180deg, #d1cfe4, #ffffff);
-  border-radius: 0 0 50% 50%;
+  padding: 100px 20px;
+  background: #f0f0f0; /* Solid white background for seamless merging */
+  width: 100%;
 }
 
 .hero-content {
@@ -91,9 +90,10 @@ body {
 
 /* About Section */
 .about {
-  padding: 60px 20px; /* Increased padding */
-  background: #f5f5f5;
+  padding: 60px 20px;
   text-align: center;
+  background: #d9d9d9; /* Light grey background */
+  width: 100%;
 }
 
 .about h2 {
@@ -105,17 +105,23 @@ body {
 .about h2::after {
   content: "";
   display: block;
-  width: 60px;
+  width: 80px;
   height: 4px;
   background: #6a5acd;
-  margin: 10px auto;
+  margin: 10px auto 0;
   border-radius: 2px;
 }
 
 .about p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #666;
+  color: #555;
+}
+
+/* Shared Section Styling */
+section {
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
 /* Education Section */
@@ -287,6 +293,7 @@ body {
   padding: 80px 20px; /* Increased spacing */
   background: #f5f5f5;
   text-align: center;
+  width: 100%;
 }
 
 .projects h2 {
@@ -358,12 +365,79 @@ body {
   text-decoration: underline;
 }
 
-/* Footer Section */
-.footer {
-  padding: 40px 20px;
-  background: linear-gradient(90deg, #d1cfe4, #e5e5f7);
+/* Recognition Section */
+.recognition {
+  padding: 60px 20px;
+  background-color: #f5f5f5; /* Light grey background */
   text-align: center;
 }
+
+.recognition h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.recognition h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #6a5acd; /* Accent color */
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+.recognition-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap cards on smaller screens */
+  gap: 20px;
+  justify-content: center; /* Center cards */
+}
+
+.recognition-card {
+  background: #fff; /* White background for cards */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 300px; /* Fixed width */
+  padding: 20px;
+  text-align: left;
+  display: block;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recognition-card h3 {
+  font-size: 1.5rem;
+  color: #6a5acd; /* Accent color for headings */
+  margin-top: 0 !important;
+}
+
+.recognition-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+    margin-top: 10px;
+}
+
+
+
+.recognition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Highlighted shadow */
+}
+
+/* Footer Section */
+.footer {
+  background: linear-gradient(90deg, #d1cfe4, #e5e5f7);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  margin: 0; /* Remove any existing margin */
+ 
+}
+
 
 .footer h3 {
   font-size: 2rem;

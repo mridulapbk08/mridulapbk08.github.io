@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import the AOS CSS file
 import "./CloudProjectPage.css";
 
 const CloudProjectPage = () => {
+  useEffect(() => {
+    // Initialize AOS for scroll animations
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: "ease-in-out", // Animation easing
+      once: true, // Animation runs only once
+    });
+  }, []);
+
   return (
-    <div className="project-page-container">
-      <header className="project-header">
+    <div className="project-page-container" data-aos="fade-up">
+      <header className="project-header" data-aos="fade-down">
         <h1>Cloud Native Web App</h1>
       </header>
       <section className="project-details">
-        <div className="details-section">
+        <div className="details-section" data-aos="fade-right">
           <h2>Flask-Based Application</h2>
           <p>
             Developed a Flask-based application deployed on GCP, featuring
@@ -19,7 +30,7 @@ const CloudProjectPage = () => {
             scalable workflow.
           </p>
         </div>
-        <div className="details-section">
+        <div className="details-section" data-aos="fade-left">
           <h2>CI/CD Pipelines</h2>
           <p>
             To streamline the development lifecycle, implemented CI/CD
@@ -31,22 +42,22 @@ const CloudProjectPage = () => {
             improved the efficiency of updates and allowed for rapid iteration.
           </p>
         </div>
-        <div className="details-section">
+        <div className="details-section" data-aos="fade-right">
           <h2>Terraform</h2>
           <p>
             The entire cloud infrastructure was provisioned and managed using
             Terraform, ensuring reproducibility and scalability. This included
             defining resources for Compute Engine instances, Cloud SQL
-            databases, Pub/Sub topics, and serverless Cloud Functions. Utilizing
-            Terraform's Infrastructure as Code (IaC) capabilities, the setup
-            was standardized across environments, enhancing collaboration,
-            simplifying infrastructure modifications, and ensuring high
-            reliability.
+            databases, Pub/Sub topics, and serverless Cloud Functions.
+            Utilizing Terraform's Infrastructure as Code (IaC) capabilities,
+            the setup was standardized across environments, enhancing
+            collaboration, simplifying infrastructure modifications, and
+            ensuring high reliability.
           </p>
         </div>
       </section>
       {/* Add the GitHub link below the cards */}
-      <div className="github-link">
+      <div className="github-link" data-aos="zoom-in">
         <a
           href="https://github.com/your-repository-link"
           target="_blank"

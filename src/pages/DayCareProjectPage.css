@@ -6,6 +6,7 @@
     background: #f7f8fa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 70vh;
   }
   
   .project-header {
@@ -21,6 +22,7 @@
   
   .project-content {
     margin-bottom: 20px;
+    margin-top: 10vh;
   }
   
   .project-section {

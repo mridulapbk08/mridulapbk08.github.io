@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+
 import "./SocialDistanceProjectPage.css"; // Ensure CSS styles for consistent design
 
 const SocialDistanceProjectPage = () => {
@@ -53,6 +54,7 @@ const SocialDistanceProjectPage = () => {
           Visit the GitHub Repository
         </a>
       </div>
+      
     </div>
   );
 };

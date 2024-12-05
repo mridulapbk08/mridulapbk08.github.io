@@ -14,7 +14,7 @@ const CarRentalProjectPage = () => {
   }, []);
 
   return (
-    <div className="project-page" data-aos="fade-up">
+    <div className="project-page-car" data-aos="fade-up">
       <header className="project-header" data-aos="fade-down">
         <h1>Car Rental System</h1>
       </header>

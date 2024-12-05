@@ -14,12 +14,12 @@ const CloudProjectPage = () => {
   }, []);
 
   return (
-    <div className="project-page-container" data-aos="fade-up">
+    <div className="project-page-cloud-container" data-aos="fade-up">
       <header className="project-header" data-aos="fade-down">
         <h1>Cloud Native Web App</h1>
       </header>
-      <section className="project-details">
-        <div className="details-section" data-aos="fade-right">
+      <section className="project-cloud-details">
+        <div className="details-section-cloud" data-aos="fade-right">
           <h2>Flask-Based Application</h2>
           <p>
             Developed a Flask-based application deployed on GCP, featuring
@@ -30,7 +30,7 @@ const CloudProjectPage = () => {
             scalable workflow.
           </p>
         </div>
-        <div className="details-section" data-aos="fade-left">
+        <div className="details-section-cloud" data-aos="fade-left">
           <h2>CI/CD Pipelines</h2>
           <p>
             To streamline the development lifecycle, implemented CI/CD
@@ -42,7 +42,7 @@ const CloudProjectPage = () => {
             improved the efficiency of updates and allowed for rapid iteration.
           </p>
         </div>
-        <div className="details-section" data-aos="fade-right">
+        <div className="details-section-cloud" data-aos="fade-right">
           <h2>Terraform</h2>
           <p>
             The entire cloud infrastructure was provisioned and managed using

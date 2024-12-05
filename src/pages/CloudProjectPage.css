@@ -1,8 +1,7 @@
 /* General Styles for the Project Page */
-.project-page-container {
+.project-page-cloud-container {
     font-family: Arial, sans-serif;
     padding: 20px;
-    max-width: 1200px;
     margin: 0 auto;
     background: #f7f8fa;
     border-radius: 8px;
@@ -30,27 +29,27 @@
   }
   
   /* Project Details */
-  .project-details {
+  .project-cloud-details {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
   }
   
-  .details-section {
-    flex: 1 1 calc(33.333% - 20px);
+  .details-section-cloud{
+    flex: column;
     background: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .details-section h2 {
+  .details-section-cloud h2 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 10px;
   }
   
-  .details-section p {
+  .details-section-cloud p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
@@ -75,3 +74,15 @@
     margin-right: 8px;
   }
   
+  @media screen and (min-width: 768px){
+    .project-page-cloud-container{
+      height: 75vh;
+    }
+    .details-section-cloud{
+      flex: 1 1 calc(33.333% - 20px);
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }

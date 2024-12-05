@@ -14,7 +14,7 @@ const ProShopProjectPage = () => {
   }, []);
 
   return (
-    <div className="project-page" data-aos="fade-in">
+    <div className="project-page-shop" data-aos="fade-in">
       <header className="project-header" data-aos="fade-down">
         <h1>Pro Shop</h1>
       </header>

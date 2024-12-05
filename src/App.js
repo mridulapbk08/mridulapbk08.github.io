@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import the AOS CSS file
@@ -25,6 +25,7 @@ import ContactPage from "./pages/ContactPage.js";
 import "./App.css";
 
 const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     // Initialize AOS library for scroll animations
     AOS.init({
@@ -33,6 +34,20 @@ const App = () => {
       once: true, // Run animation only once
     });
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    // Get the container element
+  const container = document.querySelector(".container-2");
+
+  if (container) {
+    if (!menuOpen) {
+      container.classList.add("sections-moved");
+    } else {
+      container.classList.remove("sections-moved");
+    }
+  }
+  };
 
   return (
     <Router>
@@ -43,12 +58,12 @@ const App = () => {
           <nav>
             <ul className="nav-links">
               <li><Link to="/">Home</Link></li>
-              <li><a href="#about">About</a></li>
+              {/* <li><a href="#about">About</a></li>
               <li><a href="#education">Education</a></li>
               <li><a href="#experience">Experience</a></li>
-              <li><a href="#projects">Projects</a></li>
+              <li><a href="#projects">Projects</a></li> */}
               <li><Link to="/contact">Contact</Link></li>
-              <li><a href="#recognition">Recognition</a></li>
+              {/* <li><a href="#recognition">Recognition</a></li> */}
 
             </ul>
           </nav>
@@ -58,7 +73,7 @@ const App = () => {
           <Route
             path="/"
             element={
-              <>
+              <div className="container-2">
                 {/* Hero Section */}
                 <section id="home" className="hero" data-aos="fade-up">
                   <div className="hero-content">
@@ -320,7 +335,7 @@ const App = () => {
 
 
 
-              </>
+              </div>
             }
           />
 

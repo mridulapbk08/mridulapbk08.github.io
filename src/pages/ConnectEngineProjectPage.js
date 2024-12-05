@@ -14,12 +14,12 @@ const ConnectEngineProjectPage = () => {
   }, []);
 
   return (
-    <div className="project-page-container" data-aos="fade-up">
+    <div className="project-page-connect-container" data-aos="fade-up">
       <header className="project-header" data-aos="fade-down">
         <h1>Connect Engine</h1>
       </header>
-      <div className="project-details">
-        <div className="details-section" data-aos="fade-right">
+      <div className="project-details-connect">
+        <div className="details-section-connect" data-aos="fade-right">
           <h2>Project Overview</h2>
           <p>
             ConnectEngine is a social media platform designed for young adults and

@@ -1,4 +1,4 @@
-.project-page {
+.project-page-shop{
     font-family: Arial, sans-serif;
     padding: 20px;
     max-width: 1200px;
@@ -6,7 +6,6 @@
     background: #f7f8fa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 70vh;
   }
   
   .project-header {
@@ -60,3 +59,8 @@
     margin-right: 8px;
   }
   
+  @media screen and (min-width: 768px){
+    .project-page-shop{
+      height: 70vh;
+    }
+  }

@@ -12,6 +12,7 @@ body {
 }
 .container {
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* Header Section */
@@ -27,6 +28,11 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -45,6 +51,84 @@ body {
 .nav-links a:hover {
   color: #483d8b;
   text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s ease;
+}
+
+/* Active hamburger menu state */
+.hamburger.open .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo{
+    display: none;
+  }
+  .nav {
+    display: none;
+    float: right;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999; 
+    width: 100%; 
+  }
+
+  
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row; /* Make the items vertical */
+    gap: 10px; /* Add spacing between items */
+  }
+
+  .nav-links li {
+    text-align: left;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .sections-moved {
+    margin-top: 200px; /* Adjust this value based on the height of the navigation */
+    transition: margin 0.3s ease-in-out;
+  }
 }
 
 /* Hero Section */

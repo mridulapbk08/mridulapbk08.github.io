@@ -15,7 +15,7 @@ const SocialDistanceProjectPage = () => {
   }, []);
 
   return (
-    <div className="project-page" data-aos="fade-in">
+    <div className="project-page-social" data-aos="fade-in">
       <header className="project-header" data-aos="fade-down">
         <h1>Social Distance and Face Mask Detection</h1>
       </header>

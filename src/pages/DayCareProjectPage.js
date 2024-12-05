@@ -14,11 +14,11 @@ const DayCareProjectPage = () => {
   }, []);
 
   return (
-    <div className="project-page" data-aos="fade-in">
+    <div className="project-page-daycare" data-aos="fade-in">
       <header className="project-header" data-aos="fade-down">
         <h1>Day Care System</h1>
       </header>
-      <section className="project-content">
+      <section className="project-content-daycare">
         <div className="project-section" data-aos="fade-up">
           <h2>Student Data Collection and Tracking System</h2>
           <p>

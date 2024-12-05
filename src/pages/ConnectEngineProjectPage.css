@@ -1,12 +1,12 @@
-.project-page-container {
+.project-page-connect-container {
     font-family: Arial, sans-serif;
     padding: 20px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     background: #f7f8fa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 70vh;
+    /* height: 70vh; */
   }
   
   .project-header {
@@ -24,12 +24,12 @@
     margin-bottom: 20px;
   }
   
-  .details-section {
+  .details-section-connect{
     background: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10vh;
+    /* margin: 10vh; */
   }
   
   .details-section h2 {
@@ -66,4 +66,20 @@
     vertical-align: middle;
     margin-right: 8px;
   }
+
+  .details-section-connect p{
+    margin-top: 10px;
+  }
   
+  @media screen and (min-width: 768px){
+    .project-page-connect-container{
+      height: 70vh;
+      max-width: 1200px;
+    }
+
+    .details-section-connect{
+      margin: 2vh;
+    }
+
+    
+  }

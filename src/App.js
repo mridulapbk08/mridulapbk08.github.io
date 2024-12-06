@@ -12,6 +12,9 @@ import DaycareImage from "./assets/images/daycare-software-system.jpg";
 import FaceMaskTrackerImage from "./assets/images/face_mask_tracker.png";
 import ProShopImage from "./assets/images/proshop.webp";
 import SocialMediaImage from "./assets/images/social-media.webp";
+import Certification1Image from "./assets/images/GCPCerti.jpeg";
+import Certification2Image from "./assets/images/AzureFundamentals_Certification.png";
+import Certification3Image from "./assets/images/AzureAdministrator_Certification.png";
 
 // Import pages
 import CloudProjectPage from "./pages/CloudProjectPage.js";
@@ -21,6 +24,7 @@ import SocialDistancePage from "./pages/SocialDistanceProjectPage.js";
 import ProShopPage from "./pages/ProShopProjectPage.js";
 import ConnectEnginePage from "./pages/ConnectEngineProjectPage.js";
 import ContactPage from "./pages/ContactPage.js";
+
 
 import "./App.css";
 
@@ -294,6 +298,64 @@ const App = () => {
                     </div>
                   </div>
                 </section>
+                <section className="certification" id="certification" data-aos="fade-up">
+  <h2>Certifications</h2>
+  <div className="certification-container">
+    {/* Certification 1 */}
+    <div className="certification-item" data-aos="zoom-in">
+    <img
+  src={Certification1Image}
+  alt="Certification 1"
+  className="certification-image-gcp"
+/>
+      <p>
+        <a
+          href="https://www.credential.net/8751610d-f100-42a8-830b-83320b268a78#acc.BoUTfKzS"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cloud Practitioner Certification
+        </a>
+      </p>
+    </div>
+    {/* Certification 2 */}
+    <div className="certification-item" data-aos="zoom-in" data-aos-delay="200">
+    <img
+  src={Certification2Image}
+  alt="Certification 2"
+  className="certification-image-azure-fundamentals"
+/>
+      <p>
+        <a
+          href="https://www.credly.com/badges/3ca5d54b-a780-4af8-85f7-b3c988613943/linked_in_profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Azure Fundamentals Certification
+        </a>
+      </p>
+    </div>
+    {/* Certification 3 */}
+    <div className="certification-item" data-aos="zoom-in" data-aos-delay="400">
+    <img
+  src={Certification3Image}
+  alt="Certification 3"
+  className="certification-image-azure-administrator"
+/>
+      <p>
+        <a
+          href="https://www.credly.com/badges/05ffb555-e0fb-430d-9512-de62f6563ffd/public_url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Azure Administrator Certification
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
                  {/* Recognition Section */}
                  <section className="recognition" id="recognition" data-aos="fade-up">
   <h2>Recognition</h2>

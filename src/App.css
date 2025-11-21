@@ -425,7 +425,6 @@ section {
 .experience-right h3 {
   font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 10px;
   color: #6a5acd;
 }
 
@@ -992,7 +991,20 @@ section {
     align-items: center;
   }
 
+  
   .skills-card {
     width: 90%;
   }
+  
+}
+.experience-logo {
+  border-radius: 50%;
+  width: 50px;
+  height: auto;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }

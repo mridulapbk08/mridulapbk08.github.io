@@ -1,9 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.d47084e4.css",
-    "main.js": "/static/js/main.c61e5861.js",
+    "main.js": "/static/js/main.00c73c50.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/face_mask_tracker.png": "/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
+    "static/media/solutions.png": "/static/media/solutions.6d2a96dba5c1fe155a48.png",
+    "static/media/mindlance.png": "/static/media/mindlance.74cd315c683659bc3dbc.png",
+    "static/media/mahindra.png": "/static/media/mahindra.519fa59b8f8d4981e31d.png",
+    "static/media/accenture.png": "/static/media/accenture.d57c85164588f991a59a.png",
     "static/media/social-media.webp": "/static/media/social-media.a9f1e43e758f07c67738.webp",
     "static/media/AzureAdministrator_Certification.png": "/static/media/AzureAdministrator_Certification.26424c5867cca18eaf2f.png",
     "static/media/AzureFundamentals_Certification.png": "/static/media/AzureFundamentals_Certification.06fd920824dff8020d66.png",
@@ -16,11 +20,11 @@
     "static/media/contact_me.webp": "/static/media/contact_me.b47fe8d69d2069a27cda.webp",
     "index.html": "/index.html",
     "main.d47084e4.css.map": "/static/css/main.d47084e4.css.map",
-    "main.c61e5861.js.map": "/static/js/main.c61e5861.js.map",
+    "main.00c73c50.js.map": "/static/js/main.00c73c50.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d47084e4.css",
-    "static/js/main.c61e5861.js"
+    "static/js/main.00c73c50.js"
   ]
 }

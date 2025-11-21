@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.d47084e4.css",
+    "main.css": "/static/css/main.27ff041d.css",
     "main.js": "/static/js/main.00c73c50.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/face_mask_tracker.png": "/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
@@ -19,12 +19,12 @@
     "static/media/GCPCerti.jpeg": "/static/media/GCPCerti.fec545c2301dbef234e6.jpeg",
     "static/media/contact_me.webp": "/static/media/contact_me.b47fe8d69d2069a27cda.webp",
     "index.html": "/index.html",
-    "main.d47084e4.css.map": "/static/css/main.d47084e4.css.map",
+    "main.27ff041d.css.map": "/static/css/main.27ff041d.css.map",
     "main.00c73c50.js.map": "/static/js/main.00c73c50.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d47084e4.css",
+    "static/css/main.27ff041d.css",
     "static/js/main.00c73c50.js"
   ]
 }

@@ -64,7 +64,7 @@ const Footer = () => {
           <div className="footer-icon-text">
             <FontAwesomeIcon icon={faFileDownload} size="1x" />
             <a
-              href="/path/to/resume.pdf"
+              href="https://drive.google.com/file/d/1WUg2kHCe5Zls20frm24BOgGGQBtlaatt/view"
               target="_blank"
               rel="noopener noreferrer"
             >

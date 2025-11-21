@@ -359,8 +359,7 @@ const App = () => {
                           <strong>Role:</strong> Cloud & Backend Engineer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Network Structures & Cloud
-                          Computing course
+                          <strong>Timeline:</strong> Jan 2024 – Apr 2024
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 1
@@ -401,7 +400,7 @@ const App = () => {
                           <strong>Role:</strong> Full-Stack Developer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Academic project
+                          <strong>Timeline:</strong> Jan 2024 – Apr 2024
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 3
@@ -443,7 +442,7 @@ const App = () => {
                           Modeler
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Academic project
+                          <strong>Timeline:</strong> Oct 2023 - Dec 2023
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 3
@@ -487,7 +486,7 @@ const App = () => {
                           <strong>Role:</strong> Computer Vision Developer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Personal/academic project
+                          <strong>Timeline:</strong> Jan 2021 - March 2021
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 2
@@ -528,7 +527,7 @@ const App = () => {
                           <strong>Role:</strong> Full-Stack Developer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Capstone-style project
+                          <strong>Timeline:</strong> June 2021 - Aug 2021
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 4
@@ -566,7 +565,7 @@ const App = () => {
                           <strong>Role:</strong> Backend & Dashboard Developer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Academic project
+                          <strong>Timeline:</strong> Sep 2023 – Dec 2023
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 4

@@ -25,7 +25,10 @@ import SocialDistancePage from "./pages/SocialDistanceProjectPage.js";
 import ProShopPage from "./pages/ProShopProjectPage.js";
 import ConnectEnginePage from "./pages/ConnectEngineProjectPage.js";
 import ContactPage from "./pages/ContactPage.js";
-
+import mindlanceLogo from "./assets/images/mindlance.png";
+import accentureLogo from "./assets/images/accenture.png";
+import CsSoftSolutionLogo from "./assets/images/solutions.png";
+import mahindraLogo from "./assets/images/mahindra.png";
 import "./App.css";
 
 const App = () => {
@@ -189,7 +192,14 @@ const App = () => {
                       </div>
                       <div className="divider"></div>
                       <div className="experience-right">
-                        <h3>Mindlance Inc., New Jersey, USA</h3>
+                        <div className="experience-header">
+                          <img
+                            src={mindlanceLogo}
+                            alt="Mindlance Logo"
+                            className="experience-logo"
+                          />
+                          <h3>Mindlance Inc., New Jersey, USA</h3>
+                        </div>
                         <p>
                           I played a key role in the development of an automated
                           job application web app designed to improve efficiency
@@ -216,7 +226,14 @@ const App = () => {
                       </div>
                       <div className="divider"></div>
                       <div className="experience-right">
-                        <h3>Accenture, Gurugram, India</h3>
+                        <div className="experience-header">
+                          <img
+                            src={accentureLogo}
+                            alt="Accenture Logo"
+                            className="experience-logo"
+                          />
+                          <h3>Accenture, Gurugram, India</h3>
+                        </div>
                         <p>
                           Contributed to the creation and enhancement of digital
                           platforms using Java, Spring Boot, MVC frameworks, and
@@ -247,7 +264,14 @@ const App = () => {
                       </div>
                       <div className="divider"></div>
                       <div className="experience-right">
-                        <h3>CS SOFT Solutions, Mohali, Punjab</h3>
+                        <div className="experience-header">
+                          <img
+                            src={CsSoftSolutionLogo}
+                            alt="CS SOFT Solutions Logo"
+                            className="experience-logo"
+                          />
+                          <h3>CS SOFT Solutions, Mohali, Punjab</h3>
+                        </div>
                         <p>
                           Introduced dynamic features to enhance the
                           functionality of the Diving Specials application, a
@@ -273,7 +297,14 @@ const App = () => {
                       </div>
                       <div className="divider"></div>
                       <div className="experience-right">
-                        <h3>Tech Mahindra, New Delhi, India</h3>
+                        <div className="experience-header">
+                          <img
+                            src={mahindraLogo}
+                            alt="Tech Mahindra Logo"
+                            className="experience-logo"
+                          />
+                          <h3>Tech Mahindra, New Delhi, India</h3>
+                        </div>
                         <p>
                           Implemented a comprehensive ERP application to
                           automate the workflow processes of CPWD, New Delhi,

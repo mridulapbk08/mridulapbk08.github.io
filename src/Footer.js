@@ -34,7 +34,7 @@ const Footer = () => {
           <h4>Follow</h4>
           <div className="social-icons">
             <a
-              href="https://github.com"
+              href="https://github.com/mridulapbk08"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -42,7 +42,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/mridulaaprabhakar?igsh=MTRlZ2FmMXBhM3Y5aA%3D%3D&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -50,7 +50,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mridula-prabhakar-b28b24208/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

@@ -185,7 +185,7 @@ const App = () => {
                     {/* Mindlance */}
                     <div className="experience-item" data-aos="fade-up">
                       <div className="experience-left">
-                        <p className="experience-dates">Oct 2023 - Present</p>
+                        <p className="experience-dates">Sep 2024 - Dec 2024</p>
                         <p className="experience-role">
                           Software Development Engineer Intern
                         </p>
@@ -332,7 +332,7 @@ const App = () => {
                   <div className="education-content">
                     <div className="education-item" data-aos="zoom-in">
                       <div className="education-left">
-                        <p className="education-dates">Sept 2023 - Aug 2025</p>
+                        <p className="education-dates">Sept 2023 - Dec 2025</p>
                         <p className="education-degree">Master's Degree</p>
                       </div>
                       <div className="divider"></div>

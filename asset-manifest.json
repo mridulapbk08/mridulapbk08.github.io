@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.27ff041d.css",
-    "main.js": "/static/js/main.1e9f7f63.js",
+    "main.css": "/static/css/main.0f1382f2.css",
+    "main.js": "/static/js/main.d16dcad6.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/face_mask_tracker.png": "/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
     "static/media/solutions.png": "/static/media/solutions.6d2a96dba5c1fe155a48.png",
+    "static/media/self-healing-dashboard.png": "/static/media/self-healing-dashboard.2707547f57c4d797d47c.png",
     "static/media/mindlance.png": "/static/media/mindlance.74cd315c683659bc3dbc.png",
     "static/media/mahindra.png": "/static/media/mahindra.519fa59b8f8d4981e31d.png",
     "static/media/accenture.png": "/static/media/accenture.d57c85164588f991a59a.png",
@@ -19,12 +20,12 @@
     "static/media/GCPCerti.jpeg": "/static/media/GCPCerti.fec545c2301dbef234e6.jpeg",
     "static/media/contact_me.webp": "/static/media/contact_me.b47fe8d69d2069a27cda.webp",
     "index.html": "/index.html",
-    "main.27ff041d.css.map": "/static/css/main.27ff041d.css.map",
-    "main.1e9f7f63.js.map": "/static/js/main.1e9f7f63.js.map",
+    "main.0f1382f2.css.map": "/static/css/main.0f1382f2.css.map",
+    "main.d16dcad6.js.map": "/static/js/main.d16dcad6.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.27ff041d.css",
-    "static/js/main.1e9f7f63.js"
+    "static/css/main.0f1382f2.css",
+    "static/js/main.d16dcad6.js"
   ]
 }

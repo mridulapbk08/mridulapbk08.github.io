@@ -34,7 +34,7 @@ const Footer = () => {
           <h4>Follow</h4>
           <div className="social-icons">
             <a
-              href="https://github.com/mridulapbk08"
+              href="https://github.com/mridulapbk?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -64,7 +64,7 @@ const Footer = () => {
           <div className="footer-icon-text">
             <FontAwesomeIcon icon={faFileDownload} size="1x" />
             <a
-              href="https://drive.google.com/file/d/1WUg2kHCe5Zls20frm24BOgGGQBtlaatt/view"
+              href="https://drive.google.com/drive/u/0/folders/1sv9Zdnla2z7ygnnqWq-Dox7FNtsKktBR"
               target="_blank"
               rel="noopener noreferrer"
             >

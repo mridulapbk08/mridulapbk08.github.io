@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import the AOS CSS file
-import Footer from "./Footer"; // Import Footer component
+import "aos/dist/aos.css";
+import Footer from "./Footer";
+import "./App.css";
 
 // Import images
 import MridulaImage from "./assets/images/Mridula_Prabhakar.jpg";
+import SelfHealingImage from "./assets/images/self-healing-dashboard.png";
 import CloudImage from "./assets/images/cloud.webp";
 import CarRentalImage from "./assets/images/cars.webp";
 import DaycareImage from "./assets/images/daycare-software-system.jpg";
@@ -15,9 +17,14 @@ import SocialMediaImage from "./assets/images/social-media.webp";
 import Certification1Image from "./assets/images/GCPCerti.jpeg";
 import Certification2Image from "./assets/images/AzureFundamentals_Certification.png";
 import Certification3Image from "./assets/images/AzureAdministrator_Certification.png";
-import AboutPage from "./pages/AboutPage.js";
+import mindlanceLogo from "./assets/images/mindlance.png";
+import accentureLogo from "./assets/images/accenture.png";
+import CsSoftSolutionLogo from "./assets/images/solutions.png";
+import mahindraLogo from "./assets/images/mahindra.png";
 
 // Import pages
+import AboutPage from "./pages/AboutPage.js";
+import SelfHealingProjectPage from "./pages/SelfHealingProjectPage.js";
 import CloudProjectPage from "./pages/CloudProjectPage.js";
 import CarRentalPage from "./pages/CarRentalProjectPage.js";
 import DaycarePage from "./pages/DayCareProjectPage.js";
@@ -25,26 +32,20 @@ import SocialDistancePage from "./pages/SocialDistanceProjectPage.js";
 import ProShopPage from "./pages/ProShopProjectPage.js";
 import ConnectEnginePage from "./pages/ConnectEngineProjectPage.js";
 import ContactPage from "./pages/ContactPage.js";
-import mindlanceLogo from "./assets/images/mindlance.png";
-import accentureLogo from "./assets/images/accenture.png";
-import CsSoftSolutionLogo from "./assets/images/solutions.png";
-import mahindraLogo from "./assets/images/mahindra.png";
-import "./App.css";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
-    // Initialize AOS library for scroll animations
     AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease-in-out", // Animation easing
-      once: true, // Run animation only once
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
     });
   }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    // Get the container element
     const container = document.querySelector(".container-2");
 
     if (container) {
@@ -59,7 +60,6 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        {/* Header */}
         <header className="header" data-aos="fade-down">
           <div className="logo">Mridula Prabhakar</div>
           <nav>
@@ -70,22 +70,9 @@ const App = () => {
               <li>
                 <Link to="/about">About</Link>
               </li>
-              {/* <li>
-                <Link to="/experience">Experience</Link>
-              </li>
-              <li>
-                <Link to="/education">Education</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projects</Link>
-              </li>
-              <li>
-                <Link to="/skills">Skills</Link>
-              </li> */}
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
-              {/* <li><a href="#recognition">Recognition</a></li> */}
             </ul>
           </nav>
         </header>
@@ -95,8 +82,6 @@ const App = () => {
             path="/"
             element={
               <div className="container-2">
-                {/* Hero Section */}
-                {/* Hero Section */}
                 <section id="home" className="hero" data-aos="fade-up">
                   <div className="hero-content">
                     <img
@@ -105,10 +90,10 @@ const App = () => {
                       className="profile-pic"
                       data-aos="zoom-in"
                     />
+
                     <div className="intro">
                       <h1 data-aos="fade-up">Hi, I'm Mridula Prabhakar</h1>
 
-                      {/* Professional Headline */}
                       <h2
                         className="hero-headline"
                         data-aos="fade-up"
@@ -117,7 +102,6 @@ const App = () => {
                         Software Development Engineer
                       </h2>
 
-                      {/* Value Proposition */}
                       <p
                         className="hero-subtitle"
                         data-aos="fade-up"
@@ -130,7 +114,6 @@ const App = () => {
                         systems, automation platforms, and consumer web apps.
                       </p>
 
-                      {/* CTA Buttons */}
                       <div
                         className="hero-cta"
                         data-aos="fade-up"
@@ -147,8 +130,6 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* About Section */}
-                {/* About Section (Preview) */}
                 <section id="about" className="about" data-aos="fade-right">
                   <h2>About</h2>
                   <p>
@@ -157,10 +138,7 @@ const App = () => {
                     Northeastern University in Boston. I enjoy working at the
                     intersection of design and technology—translating complex
                     requirements into intuitive, user-centered digital
-                    experiences. With experience spanning enterprise systems,
-                    automation platforms, cloud applications, and e-commerce
-                    tools, I bring a balanced perspective of usability,
-                    technical feasibility, and product thinking.
+                    experiences.
                     <br />
                     <br />
                     My work emphasizes research-driven decisions, clear visual
@@ -168,9 +146,7 @@ const App = () => {
                     Throughout roles at Accenture, Mindlance, and academic
                     projects, I’ve collaborated with cross-functional teams to
                     build scalable, thoughtful solutions that improve workflows
-                    and user satisfaction. I’m passionate about creating
-                    meaningful digital products that are not only functional,
-                    but delightful and accessible.
+                    and user satisfaction.
                   </p>
 
                   <Link to="/about" className="about-link">
@@ -178,11 +154,10 @@ const App = () => {
                   </Link>
                 </section>
 
-                {/* Experience Section */}
                 <section id="experience" className="experience">
                   <h2 data-aos="fade-left">Experience</h2>
+
                   <div className="experience-content">
-                    {/* Mindlance */}
                     <div className="experience-item" data-aos="fade-up">
                       <div className="experience-left">
                         <p className="experience-dates">Sep 2024 - Dec 2024</p>
@@ -190,7 +165,9 @@ const App = () => {
                           Software Development Engineer Intern
                         </p>
                       </div>
+
                       <div className="divider"></div>
+
                       <div className="experience-right">
                         <div className="experience-header">
                           <img
@@ -205,18 +182,11 @@ const App = () => {
                           job application web app designed to improve efficiency
                           and user experience. My work involved creating a
                           reliable backend using Golang, enabling faster data
-                          processing and efficient task management. I
-                          implemented features like scheduling and retry
-                          mechanisms to streamline application submissions and
-                          reduce delays. Additionally, I developed systems for
-                          handling tasks asynchronously with real-time tracking
-                          and error management, ensuring the application was
-                          fast, scalable, and easy to use.
+                          processing and efficient task management.
                         </p>
                       </div>
                     </div>
 
-                    {/* Accenture */}
                     <div className="experience-item" data-aos="fade-up">
                       <div className="experience-left">
                         <p className="experience-dates">Oct 2021 - Sept 2023</p>
@@ -224,7 +194,9 @@ const App = () => {
                           Application Development Analyst
                         </p>
                       </div>
+
                       <div className="divider"></div>
+
                       <div className="experience-right">
                         <div className="experience-header">
                           <img
@@ -239,30 +211,21 @@ const App = () => {
                           platforms using Java, Spring Boot, MVC frameworks, and
                           other technologies. My responsibilities included
                           building responsive interfaces, implementing secure
-                          authentication systems, and engineering APIs to
-                          streamline payment processing. I collaborated closely
-                          with clients through regular meetings to gather
-                          requirements and feedback, ensuring user-centric
-                          design principles were integrated throughout the
-                          development process. Additionally, I documented system
-                          functionality comprehensively, reducing onboarding
-                          time for new team members and improving overall
-                          project efficiency.
+                          authentication systems, and engineering APIs.
                         </p>
                       </div>
                     </div>
 
-                    {/* CS SOFT Solutions */}
                     <div className="experience-item" data-aos="fade-up">
                       <div className="experience-left">
-                        <p className="experience-dates">
-                          June 2020 - July 2020
-                        </p>
+                        <p className="experience-dates">June 2020 - July 2020</p>
                         <p className="experience-role">
                           Software Development Intern
                         </p>
                       </div>
+
                       <div className="divider"></div>
+
                       <div className="experience-right">
                         <div className="experience-header">
                           <img
@@ -274,20 +237,13 @@ const App = () => {
                         </div>
                         <p>
                           Introduced dynamic features to enhance the
-                          functionality of the Diving Specials application, a
-                          platform for booking diving packages worldwide. I
-                          collaborated with the development team to optimize the
-                          V-log section and supported the implementation of core
-                          functionalities under the guidance of the main
-                          developer. This experience allowed me to refine my
-                          technical skills, gain hands-on experience in
-                          developing user-centric applications, and contribute
-                          to building a more interactive and efficient platform.
+                          functionality of the Diving Specials application and
+                          collaborated with the development team to optimize
+                          user-facing modules.
                         </p>
                       </div>
                     </div>
 
-                    {/* Tech Mahindra */}
                     <div className="experience-item" data-aos="fade-up">
                       <div className="experience-left">
                         <p className="experience-dates">June 2019 - Aug 2019</p>
@@ -295,7 +251,9 @@ const App = () => {
                           Software Development Intern
                         </p>
                       </div>
+
                       <div className="divider"></div>
+
                       <div className="experience-right">
                         <div className="experience-header">
                           <img
@@ -306,45 +264,39 @@ const App = () => {
                           <h3>Tech Mahindra, New Delhi, India</h3>
                         </div>
                         <p>
-                          Implemented a comprehensive ERP application to
-                          automate the workflow processes of CPWD, New Delhi,
-                          focusing on streamlining operations and minimizing
-                          manual intervention. The application utilized advanced
-                          Data Analytics for actionable insights, while Machine
-                          Learning and AI tools optimized resource allocation
-                          and enhanced efficiency. Key features included
-                          automated task scheduling, real-time process
-                          monitoring, and centralized data management, enabling
-                          seamless collaboration across departments.
+                          Implemented an ERP application to automate workflow
+                          processes for CPWD, focusing on task scheduling,
+                          centralized data management, and operational
+                          efficiency.
                         </p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Education Section */}
                 <section
                   id="education"
                   className="education"
                   data-aos="fade-left"
                 >
                   <h2>Education</h2>
+
                   <div className="education-content">
                     <div className="education-item" data-aos="zoom-in">
                       <div className="education-left">
                         <p className="education-dates">Sept 2023 - Dec 2025</p>
                         <p className="education-degree">Master's Degree</p>
                       </div>
+
                       <div className="divider"></div>
+
                       <div className="education-right">
                         <h3>Northeastern University, Boston, MA</h3>
                         <p>
                           Currently pursuing a Master of Science in Software
-                          Engineering Systems  with an expected graduation in
-                          Aug 2025. My studies emphasize key areas like Web
-                          Design, Cloud Computing, Database Management, User
-                          Experience Engineering, Application Development, as
-                          well as Program Structures and Object-oriented Design
+                          Engineering Systems. My studies emphasize web design,
+                          cloud computing, database management, user experience
+                          engineering, and object-oriented design.
                         </p>
                       </div>
                     </div>
@@ -354,7 +306,9 @@ const App = () => {
                         <p className="education-dates">Sept 2017 - Aug 2021</p>
                         <p className="education-degree">Bachelor's Degree</p>
                       </div>
+
                       <div className="divider"></div>
+
                       <div className="education-right">
                         <h3>
                           Guru Gobind Singh Indraprastha University, New Delhi,
@@ -362,22 +316,69 @@ const App = () => {
                         </h3>
                         <p>
                           Graduated with a Bachelor of Technology in Computer
-                          Science, where I focused on coursework in Java
-                          Programming, Data Mining, Operating Systems, Android
-                          App Development, Database Management, Operating
-                          Systems, Algorithm Design, and Data Structures.
+                          Science, with coursework in Java, data structures,
+                          algorithms, databases, operating systems, and software
+                          development.
                         </p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Projects Section */}
-                {/* Projects Section */}
                 <section id="projects" className="projects" data-aos="fade-up">
                   <h2>Recent Projects</h2>
+
                   <div className="projects-content">
-                    {/* Cloud Native Web App */}
+                    <div className="project-item" data-aos="zoom-in">
+                      <img
+                        src={SelfHealingImage}
+                        alt="Self-Healing Agent Infrastructure"
+                        className="project-image"
+                      />
+                      <div className="project-description">
+                        <h3 className="project-title">
+                          Self-Healing Agent Infrastructure
+                        </h3>
+
+                        <p className="project-role">
+                          <strong>Role:</strong> Backend & Distributed Systems
+                          Engineer
+                        </p>
+
+                        <p className="project-meta">
+                          <strong>Timeline:</strong> Jan 2026 – May 2026
+                        </p>
+
+                        <p className="project-meta">
+                          <strong>Team:</strong> 1
+                        </p>
+
+                        <p className="project-metric">
+                          <strong>Impact:</strong> Processed 620+ workflow
+                          executions, achieving 84.5% workflow success rates
+                          and automatically recovering 239 failed tasks.
+                        </p>
+
+                        <p className="project-tech">
+                          <strong>Tech Stack:</strong> Golang, Redis,
+                          PostgreSQL, Docker, Next.js, Recharts
+                        </p>
+
+                        <p className="project-problem">
+                          <strong>Problem:</strong> Distributed workflows needed
+                          automatic recovery from task failures and worker
+                          crashes without manual intervention.
+                        </p>
+
+                        <Link
+                          to="/projects/self-healing-agent-infrastructure"
+                          className="project-link"
+                        >
+                          Learn More
+                        </Link>
+                      </div>
+                    </div>
+
                     <div className="project-item" data-aos="zoom-in">
                       <img
                         src={CloudImage}
@@ -401,7 +402,7 @@ const App = () => {
                           manual setup and release effort.
                         </p>
                         <p className="project-tech">
-                          <strong>Tech Stack:</strong> Python (Flask), Google
+                          <strong>Tech Stack:</strong> Python Flask, Google
                           Cloud Platform, Terraform, CI/CD pipelines
                         </p>
                         <p className="project-problem">
@@ -418,7 +419,6 @@ const App = () => {
                       </div>
                     </div>
 
-                    {/* Car Rental System */}
                     <div className="project-item" data-aos="zoom-in">
                       <img
                         src={CarRentalImage}
@@ -438,17 +438,16 @@ const App = () => {
                         </p>
                         <p className="project-metric">
                           <strong>Impact:</strong> Centralized vehicle,
-                          customer, and booking data, reducing manual
-                          record-keeping and inconsistent tracking.
+                          customer, and booking data, reducing manual tracking.
                         </p>
                         <p className="project-tech">
-                          <strong>Tech Stack:</strong> Web app with REST APIs
-                          and relational database (Java, Spring Boot, SQL)
+                          <strong>Tech Stack:</strong> Java, Spring Boot, SQL,
+                          REST APIs
                         </p>
                         <p className="project-problem">
-                          <strong>Problem:</strong> Small rental businesses
-                          lacked a dedicated system to manage inventory,
-                          customer information, and transactions in one place.
+                          <strong>Problem:</strong> Rental businesses needed a
+                          single system to manage inventory, customers, and
+                          transactions.
                         </p>
                         <Link
                           to="/projects/car-rental-system"
@@ -459,7 +458,6 @@ const App = () => {
                       </div>
                     </div>
 
-                    {/* Day Care System */}
                     <div className="project-item" data-aos="zoom-in">
                       <img
                         src={DaycareImage}
@@ -480,18 +478,16 @@ const App = () => {
                         </p>
                         <p className="project-metric">
                           <strong>Impact:</strong> Digitized student profiles
-                          and immunization records to make tracking and
-                          compliance checks faster and more reliable.
+                          and immunization records to improve compliance
+                          tracking.
                         </p>
                         <p className="project-tech">
-                          <strong>Tech Stack:</strong> Java/Spring, REST
+                          <strong>Tech Stack:</strong> Java, Spring, REST
                           services, SQL database
                         </p>
                         <p className="project-problem">
                           <strong>Problem:</strong> Daycare centers relied on
-                          spreadsheets and paperwork to manage student details
-                          and vaccination history, which was error-prone and
-                          difficult to update.
+                          spreadsheets and paperwork to manage student data.
                         </p>
                         <Link
                           to="/projects/day-care-system"
@@ -502,7 +498,6 @@ const App = () => {
                       </div>
                     </div>
 
-                    {/* Social Distance Tracker */}
                     <div className="project-item" data-aos="zoom-in">
                       <img
                         src={FaceMaskTrackerImage}
@@ -517,15 +512,14 @@ const App = () => {
                           <strong>Role:</strong> Computer Vision Developer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> Jan 2021 - March 2021
+                          <strong>Timeline:</strong> Jan 2021 - Mar 2021
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 2
                         </p>
                         <p className="project-metric">
                           <strong>Impact:</strong> Provided real-time visual
-                          feedback on mask and distance violations using live
-                          camera footage.
+                          feedback on mask and distancing violations.
                         </p>
                         <p className="project-tech">
                           <strong>Tech Stack:</strong> Python, OpenCV, machine
@@ -533,8 +527,8 @@ const App = () => {
                         </p>
                         <p className="project-problem">
                           <strong>Problem:</strong> Organizations needed a way
-                          to monitor mask usage and distancing without manually
-                          reviewing CCTV footage.
+                          to monitor compliance without manually reviewing
+                          footage.
                         </p>
                         <Link
                           to="/projects/social-distance-tracker"
@@ -545,7 +539,6 @@ const App = () => {
                       </div>
                     </div>
 
-                    {/* Pro Shop */}
                     <div className="project-item" data-aos="zoom-in">
                       <img
                         src={ProShopImage}
@@ -558,24 +551,23 @@ const App = () => {
                           <strong>Role:</strong> Full-Stack Developer
                         </p>
                         <p className="project-meta">
-                          <strong>Timeline:</strong> June 2021 - Aug 2021
+                          <strong>Timeline:</strong> Jun 2021 - Aug 2021
                         </p>
                         <p className="project-meta">
                           <strong>Team:</strong> 4
                         </p>
                         <p className="project-metric">
                           <strong>Impact:</strong> Designed an end-to-end
-                          shopping flow with secure checkout and sentiment
-                          analysis to better understand user reviews.
+                          shopping flow with secure checkout and review
+                          analysis.
                         </p>
                         <p className="project-tech">
-                          <strong>Tech Stack:</strong> React, Node.js/Express,
-                          MongoDB, Stripe, Python (sentiment analysis)
+                          <strong>Tech Stack:</strong> React, Node.js, Express,
+                          MongoDB, Stripe, Python
                         </p>
                         <p className="project-problem">
                           <strong>Problem:</strong> Sports stores needed a
-                          modern e-commerce experience with secure payments and
-                          insights into customer feedback.
+                          modern e-commerce experience with secure payments.
                         </p>
                         <Link to="/projects/pro-shop" className="project-link">
                           Learn More
@@ -583,7 +575,6 @@ const App = () => {
                       </div>
                     </div>
 
-                    {/* Connect Engine */}
                     <div className="project-item" data-aos="zoom-in">
                       <img
                         src={SocialMediaImage}
@@ -603,17 +594,15 @@ const App = () => {
                         </p>
                         <p className="project-metric">
                           <strong>Impact:</strong> Unified engagement analytics
-                          from multiple platforms into a single dashboard to
-                          support quicker reporting.
+                          from multiple platforms into a single dashboard.
                         </p>
                         <p className="project-tech">
                           <strong>Tech Stack:</strong> React, Node.js, REST
-                          APIs, MongoDB, charting/analytics libraries
+                          APIs, MongoDB, analytics libraries
                         </p>
                         <p className="project-problem">
-                          <strong>Problem:</strong> Social media teams had to
-                          manually gather metrics from different platforms,
-                          making it hard to see overall performance at a glance.
+                          <strong>Problem:</strong> Social media teams needed a
+                          single view of performance metrics.
                         </p>
                         <Link
                           to="/projects/connect-engine"
@@ -625,6 +614,7 @@ const App = () => {
                     </div>
                   </div>
                 </section>
+
                 <section
                   className="certification"
                   id="certification"
@@ -632,7 +622,6 @@ const App = () => {
                 >
                   <h2>Certifications</h2>
                   <div className="certification-container">
-                    {/* Certification 1 */}
                     <div className="certification-item" data-aos="zoom-in">
                       <img
                         src={Certification1Image}
@@ -649,7 +638,7 @@ const App = () => {
                         </a>
                       </p>
                     </div>
-                    {/* Certification 2 */}
+
                     <div
                       className="certification-item"
                       data-aos="zoom-in"
@@ -670,7 +659,7 @@ const App = () => {
                         </a>
                       </p>
                     </div>
-                    {/* Certification 3 */}
+
                     <div
                       className="certification-item"
                       data-aos="zoom-in"
@@ -694,130 +683,20 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* Skills & Expertise Section */}
-                <section className="skills" id="skills" data-aos="fade-up">
-                  <h2>Skills & Expertise</h2>
-
-                  <div className="skills-container">
-                    {/* Core Competencies */}
-                    <div className="skills-card" data-aos="zoom-in">
-                      <h3>Core Competencies</h3>
-                      <ul>
-                        <li>
-                          <strong>UX Research & Usability Testing:</strong>{" "}
-                          Interviews, journey maps, task flows, and heuristic
-                          evaluation to uncover actionable insights.
-                        </li>
-                        <li>
-                          <strong>Interaction & Visual Design:</strong>{" "}
-                          Wireframes, high-fidelity UI, responsive layouts, and
-                          accessibility-focused design.
-                        </li>
-                        <li>
-                          <strong>Frontend Development:</strong> React-based UI
-                          development, component design, and responsive
-                          interfaces.
-                        </li>
-                        <li>
-                          <strong>Product Thinking & Problem Solving:</strong>{" "}
-                          Translating complex requirements into intuitive user
-                          flows and well-structured experiences.
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Tools & Technologies */}
-                    <div
-                      className="skills-card"
-                      data-aos="zoom-in"
-                      data-aos-delay="200"
-                    >
-                      <h3>Tools & Technologies</h3>
-
-                      <div className="tool-group">
-                        <h4>Design Tools</h4>
-                        <p>Figma ●●●●○</p>
-                        <p>Miro ●●●●○</p>
-                        <p>Balsamiq ●●●○○</p>
-                        <p>Canva ●●●●○</p>
-                      </div>
-
-                      <div className="tool-group">
-                        <h4>Frontend & Development</h4>
-                        <p>ReactJS ●●●●○</p>
-                        <p>JavaScript ●●●●○</p>
-                        <p>HTML/CSS ●●●●○</p>
-                        <p>Node.js ●●●○○</p>
-                        <p>Golang ●●●○○</p>
-                      </div>
-
-                      <div className="tool-group">
-                        <h4>Backend / Data</h4>
-                        <p>SQL (PostgreSQL, MongoDB) ●●●●○</p>
-                        <p>REST APIs ●●●●○</p>
-                        <p>Selenium / Playwright ●●●○○</p>
-                      </div>
-                    </div>
-
-                    {/* Industry Experience */}
-                    <div
-                      className="skills-card"
-                      data-aos="zoom-in"
-                      data-aos-delay="400"
-                    >
-                      <h3>Industry Experience</h3>
-                      <ul>
-                        <li>
-                          <strong>E-commerce & Retail:</strong> Designed product
-                          flows, dashboards, and shopping experiences focused on
-                          clarity and conversion.
-                        </li>
-                        <li>
-                          <strong>Automation & Enterprise Tools:</strong> Built
-                          internal dashboards and automation workflows during
-                          Mindlance internship.
-                        </li>
-                        <li>
-                          <strong>FinTech / Banking:</strong> Developed scalable
-                          services and secure systems as part of Accenture
-                          projects.
-                        </li>
-                        <li>
-                          <strong>EdTech / Academic Platforms:</strong>{" "}
-                          Supported teaching workflows, student tooling, and TA
-                          responsibilities at Northeastern.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Recognition Section */}
-                <section
-                  className="recognition"
-                  id="recognition"
-                  data-aos="fade-up"
-                >
+                <section className="recognition" id="recognition" data-aos="fade-up">
                   <h2>Recognition</h2>
+
                   <div className="recognition-container">
-                    {/* Card 1 */}
-                    <div
-                      className="recognition-card card-excellence"
-                      data-aos="zoom-in"
-                    >
+                    <div className="recognition-card card-excellence" data-aos="zoom-in">
                       <h3>Excellence Award</h3>
                       <p>
-                        In September 2021, during a high-stakes system
-                        transition, I took charge to ensure seamless onboarding,
-                        thorough testing, and successful deployment of critical
-                        applications to a new platform. My in-depth
-                        understanding of the architecture and strategic
-                        execution played a pivotal role in achieving a flawless
-                        migration. This effort earned recognition for delivering
-                        high-quality outcomes under pressure.
+                        During a high-stakes system transition, I supported
+                        onboarding, testing, and deployment of critical
+                        applications to a new platform, earning recognition for
+                        high-quality delivery under pressure.
                       </p>
                     </div>
-                    {/* Card 2 */}
+
                     <div
                       className="recognition-card card-rotaract"
                       data-aos="zoom-in"
@@ -825,14 +704,12 @@ const App = () => {
                     >
                       <h3>Rotaract and IEEE</h3>
                       <p>
-                        Served as the Director of International Services for the
-                        Rotaract Club of Ignited Youth for three years, focusing
-                        on fostering global partnerships and organizing
-                        impactful events. As an IEEE Event Head, I successfully
-                        managed hackathons, Technorax, and RoboFest.
+                        Served as Director of International Services for the
+                        Rotaract Club and IEEE Event Head, organizing hackathons,
+                        technical events, and community initiatives.
                       </p>
                     </div>
-                    {/* Card 3 */}
+
                     <div
                       className="recognition-card card-badminton"
                       data-aos="zoom-in"
@@ -840,72 +717,9 @@ const App = () => {
                     >
                       <h3>Gold Medalist Badminton</h3>
                       <p>
-                        Achieved the distinction of being a gold medalist and
-                        led the Women’s Badminton Team during undergraduate
-                        studies. Won prestigious inter-college tournaments like
-                        IIT and BITS Pilani, fostering teamwork and discipline.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* ✅ Testimonials Section */}
-                <section
-                  className="testimonials"
-                  id="testimonials"
-                  data-aos="fade-up"
-                >
-                  <h2>Testimonials</h2>
-                  <div className="testimonials-container">
-                    {/* Testimonial 1 */}
-                    <div className="testimonial-card" data-aos="zoom-in">
-                      <p className="testimonial-quote">
-                        “Mridula brings a rare blend of design intuition and
-                        engineering precision. During her time at Mindlance, she
-                        consistently delivered thoughtful, user-centric
-                        solutions and became the go-to person for complex
-                        interface problems.”
-                      </p>
-                      <p className="testimonial-author">Rohit Sharma</p>
-                      <p className="testimonial-role">
-                        Senior Software Engineer, Mindlance Inc.
-                      </p>
-                    </div>
-
-                    {/* Testimonial 2 */}
-                    <div
-                      className="testimonial-card"
-                      data-aos="zoom-in"
-                      data-aos-delay="200"
-                    >
-                      <p className="testimonial-quote">
-                        “Mridula is one of the most dedicated and disciplined
-                        students I’ve worked with. As a Teaching Assistant, she
-                        demonstrated strong leadership, excellent communication,
-                        and a deep understanding of user-centered design
-                        principles.”
-                      </p>
-                      <p className="testimonial-author">Daniel Peters</p>
-                      <p className="testimonial-role">
-                        Professor, Northeastern University
-                      </p>
-                    </div>
-
-                    {/* Testimonial 3 */}
-                    <div
-                      className="testimonial-card"
-                      data-aos="zoom-in"
-                      data-aos-delay="400"
-                    >
-                      <p className="testimonial-quote">
-                        “At Accenture, Mridula consistently delivered
-                        high-quality work in fast-paced projects. Her ability to
-                        bridge design and development made her a dependable
-                        teammate and a strong contributor to our deliveries.”
-                      </p>
-                      <p className="testimonial-author">Akanksha Verma</p>
-                      <p className="testimonial-role">
-                        Application Development Lead, Accenture
+                        Led the Women’s Badminton Team during undergraduate
+                        studies and won inter-college tournaments, building
+                        discipline, teamwork, and leadership.
                       </p>
                     </div>
                   </div>
@@ -913,8 +727,13 @@ const App = () => {
               </div>
             }
           />
+
           <Route path="/about" element={<AboutPage />} />
-          {/* Project Pages */}
+
+          <Route
+            path="/projects/self-healing-agent-infrastructure"
+            element={<SelfHealingProjectPage />}
+          />
           <Route
             path="/projects/cloud-native-web-app"
             element={<CloudProjectPage />}
@@ -933,7 +752,6 @@ const App = () => {
             path="/projects/connect-engine"
             element={<ConnectEnginePage />}
           />
-          {/* Contact Page */}
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
 

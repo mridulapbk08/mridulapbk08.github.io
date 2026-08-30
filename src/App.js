@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Footer from "./Footer";
-import "./App.css";
 
-// Import images
+import "./App.css";
+import Footer from "./Footer";
+
+// Images
 import MridulaImage from "./assets/images/Mridula_Prabhakar.jpg";
+
 import SelfHealingImage from "./assets/images/self-healing-dashboard.png";
 import CloudImage from "./assets/images/cloud.webp";
 import CarRentalImage from "./assets/images/cars.webp";
@@ -14,15 +22,17 @@ import DaycareImage from "./assets/images/daycare-software-system.jpg";
 import FaceMaskTrackerImage from "./assets/images/face_mask_tracker.png";
 import ProShopImage from "./assets/images/proshop.webp";
 import SocialMediaImage from "./assets/images/social-media.webp";
+
 import Certification1Image from "./assets/images/GCPCerti.jpeg";
 import Certification2Image from "./assets/images/AzureFundamentals_Certification.png";
 import Certification3Image from "./assets/images/AzureAdministrator_Certification.png";
+
 import mindlanceLogo from "./assets/images/mindlance.png";
 import accentureLogo from "./assets/images/accenture.png";
 import CsSoftSolutionLogo from "./assets/images/solutions.png";
 import mahindraLogo from "./assets/images/mahindra.png";
 
-// Import pages
+// Pages
 import AboutPage from "./pages/AboutPage.js";
 import SelfHealingProjectPage from "./pages/SelfHealingProjectPage.js";
 import CloudProjectPage from "./pages/CloudProjectPage.js";
@@ -32,727 +42,903 @@ import SocialDistancePage from "./pages/SocialDistanceProjectPage.js";
 import ProShopPage from "./pages/ProShopProjectPage.js";
 import ConnectEnginePage from "./pages/ConnectEngineProjectPage.js";
 import ContactPage from "./pages/ContactPage.js";
+import CertificationPage from "./pages/CertificationPage.js";
+
+const interests = [
+  {
+    number: "01",
+    title: "Distributed Systems",
+    description:
+      "Fault tolerance, workflow orchestration, reliable execution, scheduling, and recovery across distributed services.",
+    variant: "dark",
+  },
+  {
+    number: "02",
+    title: "Cloud Computing",
+    description:
+      "Scalable services, cloud-native applications, infrastructure automation, deployment pipelines, and production reliability.",
+    variant: "light",
+  },
+  {
+    number: "03",
+    title: "Backend & Architecture",
+    description:
+      "APIs, databases, service design, workflow automation, and scalable production software systems.",
+    variant: "accent",
+  },
+  {
+    number: "04",
+    title: "Applied AI & Vision",
+    description:
+      "Practical machine-learning and computer-vision applications designed around real-world software problems.",
+    variant: "light",
+  },
+];
+
+const projects = [
+  {
+    category: "Distributed Systems · Research",
+    title: "Self-Healing Agent Infrastructure",
+    image: SelfHealingImage,
+    description:
+      "A fault-tolerant workflow orchestration platform that detects failures, applies automated recovery strategies, and evaluates system reliability through large-scale workflow execution experiments.",
+    tech: [
+      "Golang",
+      "Redis",
+      "PostgreSQL",
+      "Docker",
+      "Distributed Systems",
+    ],
+    link: "/projects/self-healing-agent-infrastructure",
+    featured: true,
+  },
+  {
+    category: "Cloud Engineering",
+    title: "Cloud-Native Web Application",
+    image: CloudImage,
+    description:
+      "A scalable Flask application deployed on Google Cloud with REST APIs, automated CI/CD pipelines, serverless email verification, and infrastructure managed using Terraform.",
+    tech: ["Python", "Flask", "GCP", "Terraform", "CI/CD"],
+    link: "/projects/cloud-native-web-app",
+  },
+  {
+    category: "Computer Vision",
+    title: "Social Distance & Face Mask Tracker",
+    image: FaceMaskTrackerImage,
+    description:
+      "A real-time computer vision system that detects face-mask usage and social-distancing violations from video streams using deep-learning and geometric techniques.",
+    tech: ["Python", "OpenCV", "Deep Learning"],
+    link: "/projects/social-distance-tracker",
+  },
+  {
+    category: "Full-Stack Development",
+    title: "Connect Engine",
+    image: SocialMediaImage,
+    description:
+      "A MERN-stack social media platform with secure authentication, personalized content feeds, real-time posting, administration tools, and responsive user experiences.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+    link: "/projects/connect-engine",
+  },
+  {
+    category: "Database Systems",
+    title: "Car Rental System",
+    image: CarRentalImage,
+    description:
+      "A database-driven rental management system using optimized SQL design, views, stored procedures, indexes, triggers, encryption, CRUD interfaces, and Power BI visualization.",
+    tech: ["SQL", "JavaScript", "Power BI", "Database Design"],
+    link: "/projects/car-rental-system",
+  },
+  {
+    category: "Information Systems",
+    title: "Day Care Management System",
+    image: DaycareImage,
+    description:
+      "A Java-based student information system for managing records, immunization data, performance tracking, and CSV-based data operations through a desktop interface.",
+    tech: ["Java", "Swing", "SQL", "CSV"],
+    link: "/projects/day-care-system",
+  },
+  {
+    category: "Web Engineering · AI",
+    title: "Pro Shop",
+    image: ProShopImage,
+    description:
+      "A full-stack e-commerce application featuring product management, simulated PayPal transactions, reviews, and sentiment analysis to surface positive and negative customer feedback.",
+    tech: ["React", "Node.js", "MongoDB", "PayPal", "NLP"],
+    link: "/projects/pro-shop",
+  },
+];
+
+const experiences = [
+  {
+    year: "2024",
+    company: "Mindlance Inc.",
+    role: "Software Development Engineer Intern",
+    logo: mindlanceLogo,
+    description:
+      "Developed backend services in Golang for an automated job-application platform, including APIs, asynchronous processing, workflow automation, scheduling, and reliability improvements.",
+    tech: ["Golang", "Backend", "REST APIs", "Automation"],
+  },
+  {
+    year: "2021 — 2023",
+    company: "Accenture",
+    role: "Application Development Analyst",
+    logo: accentureLogo,
+    description:
+      "Built and enhanced enterprise applications using Java, Spring Boot, authentication systems, REST APIs, MVC frameworks, and responsive interfaces.",
+    tech: ["Java", "Spring Boot", "REST APIs", "Enterprise Systems"],
+  },
+  {
+    year: "2020",
+    company: "CS Soft Solutions",
+    role: "Software Development Intern",
+    logo: CsSoftSolutionLogo,
+    description:
+      "Added dynamic functionality to the Diving Specials application and collaborated with the development team on user-facing software modules.",
+    tech: [],
+  },
+  {
+    year: "2019",
+    company: "Tech Mahindra",
+    role: "Software Development Intern",
+    logo: mahindraLogo,
+    description:
+      "Worked on an ERP application for CPWD focused on workflow automation, task scheduling, and centralized information management.",
+    tech: [],
+  },
+];
+
+const certifications = [
+  {
+    slug: "google-cloud-associate-engineer",
+    provider: "Google Cloud",
+    title: "Associate Cloud Engineer",
+    image: Certification1Image,
+  },
+  {
+    slug: "azure-fundamentals",
+    provider: "Microsoft Azure",
+    title: "Azure Fundamentals",
+    image: Certification2Image,
+  },
+  {
+    slug: "azure-administrator",
+    provider: "Microsoft Azure",
+    title: "Azure Administrator",
+    image: Certification3Image,
+  },
+];
 
 const App = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
+      duration: 650,
+      easing: "ease-out-cubic",
       once: true,
+      offset: 30,
     });
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    const container = document.querySelector(".container-2");
-
-    if (container) {
-      if (!menuOpen) {
-        container.classList.add("sections-moved");
-      } else {
-        container.classList.remove("sections-moved");
-      }
-    }
-  };
-
   return (
     <Router>
-      <div className="container">
-        <header className="header" data-aos="fade-down">
-          <div className="logo">Mridula Prabhakar</div>
-          <nav>
-            <ul className="nav-links">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
+      <div className="site">
+        <header className="navbar">
+          <div className="site-container navbar-inner">
+            <Link to="/" className="site-logo">
+              MP<span>.</span>
+            </Link>
+
+            <nav className="desktop-nav">
+              <a href="/#interests">Interests</a>
+              <a href="/#projects">Projects</a>
+              <a href="/#experience">Experience</a>
+              <a href="/#education">Education</a>
+
+              <Link to="/about">
+                About
+              </Link>
+
+              <Link to="/contact" className="nav-contact">
+                Contact
+              </Link>
+            </nav>
+          </div>
         </header>
 
         <Routes>
           <Route
             path="/"
             element={
-              <div className="container-2">
-                <section id="home" className="hero" data-aos="fade-up">
-                  <div className="hero-content">
-                    <img
-                      src={MridulaImage}
-                      alt="Mridula Prabhakar"
-                      className="profile-pic"
-                      data-aos="zoom-in"
-                    />
+              <main>
+                {/* HERO */}
+                <section className="hero">
+                  <div className="hero-grid-background" />
+                  <div className="hero-orb hero-orb-one" />
+                  <div className="hero-orb hero-orb-two" />
 
-                    <div className="intro">
-                      <h1 data-aos="fade-up">Hi, I'm Mridula Prabhakar</h1>
+                  <div className="site-container hero-layout">
+                    <div
+                      className="hero-copy"
+                      data-aos="fade-up"
+                    >
+                      <div className="availability-badge">
+                        <span />
+                        Open to PhD research opportunities
+                      </div>
 
-                      <h2
-                        className="hero-headline"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                      >
-                        Software Development Engineer
-                      </h2>
-
-                      <p
-                        className="hero-subtitle"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                      >
-                        I design intuitive, user-centered digital products by
-                        blending UX design principles with strong engineering
-                        foundations. My work focuses on creating meaningful,
-                        accessible, and scalable experiences across enterprise
-                        systems, automation platforms, and consumer web apps.
+                      <p className="eyebrow eyebrow-light">
+                        SOFTWARE ENGINEER · RESEARCHER
                       </p>
 
-                      <div
-                        className="hero-cta"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                      >
-                        <a href="#projects" className="btn-primary">
-                          View My Work
+                      <h1>
+                        Mridula
+                        <br />
+                        <span>
+                          Prabhakar.
+                        </span>
+                      </h1>
+
+                      <p className="hero-main-copy">
+                        Building reliable software systems across distributed
+                        computing, cloud infrastructure, backend engineering,
+                        and intelligent applications.
+                      </p>
+
+                      <p className="hero-support-copy">
+                        I combine research-oriented problem solving with
+                        practical engineering experience across academic
+                        projects and production software environments.
+                      </p>
+
+                      <div className="hero-actions">
+                        <a
+                          href="#projects"
+                          className="button button-primary"
+                        >
+                          Explore my work
+                          <span>↗</span>
                         </a>
-                        <Link to="/contact" className="btn-secondary">
-                          Contact Me
+
+                        <Link
+                          to="/contact"
+                          className="button button-secondary"
+                        >
+                          Contact me
                         </Link>
                       </div>
-                    </div>
-                  </div>
-                </section>
 
-                <section id="about" className="about" data-aos="fade-right">
-                  <h2>About</h2>
-                  <p>
-                    I’m a UX-focused Software Engineer currently pursuing my
-                    Master of Science in Software Engineering Systems at
-                    Northeastern University in Boston. I enjoy working at the
-                    intersection of design and technology—translating complex
-                    requirements into intuitive, user-centered digital
-                    experiences.
-                    <br />
-                    <br />
-                    My work emphasizes research-driven decisions, clear visual
-                    communication, and designing for real-world constraints.
-                    Throughout roles at Accenture, Mindlance, and academic
-                    projects, I’ve collaborated with cross-functional teams to
-                    build scalable, thoughtful solutions that improve workflows
-                    and user satisfaction.
-                  </p>
+                      <div className="hero-stats">
+                        <div>
+                          <strong>
+                            7
+                          </strong>
 
-                  <Link to="/about" className="about-link">
-                    Read full about page →
-                  </Link>
-                </section>
-
-                <section id="experience" className="experience">
-                  <h2 data-aos="fade-left">Experience</h2>
-
-                  <div className="experience-content">
-                    <div className="experience-item" data-aos="fade-up">
-                      <div className="experience-left">
-                        <p className="experience-dates">Sep 2024 - Dec 2024</p>
-                        <p className="experience-role">
-                          Software Development Engineer Intern
-                        </p>
-                      </div>
-
-                      <div className="divider"></div>
-
-                      <div className="experience-right">
-                        <div className="experience-header">
-                          <img
-                            src={mindlanceLogo}
-                            alt="Mindlance Logo"
-                            className="experience-logo"
-                          />
-                          <h3>Mindlance Inc., New Jersey, USA</h3>
+                          <span>
+                            Technical projects
+                          </span>
                         </div>
-                        <p>
-                          I played a key role in the development of an automated
-                          job application web app designed to improve efficiency
-                          and user experience. My work involved creating a
-                          reliable backend using Golang, enabling faster data
-                          processing and efficient task management.
-                        </p>
+
+                        <div>
+                          <strong>
+                            4
+                          </strong>
+
+                          <span>
+                            Engineering roles
+                          </span>
+                        </div>
+
+                        <div>
+                          <strong>
+                            3
+                          </strong>
+
+                          <span>
+                            Cloud certifications
+                          </span>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="experience-item" data-aos="fade-up">
-                      <div className="experience-left">
-                        <p className="experience-dates">Oct 2021 - Sept 2023</p>
-                        <p className="experience-role">
-                          Application Development Analyst
-                        </p>
+                    <div
+                      className="hero-visual"
+                      data-aos="fade-left"
+                    >
+                      <div className="portrait-glow" />
+
+                      <div className="portrait-frame">
+                        <img
+                          src={MridulaImage}
+                          alt="Mridula Prabhakar"
+                        />
                       </div>
 
-                      <div className="divider"></div>
-
-                      <div className="experience-right">
-                        <div className="experience-header">
-                          <img
-                            src={accentureLogo}
-                            alt="Accenture Logo"
-                            className="experience-logo"
-                          />
-                          <h3>Accenture, Gurugram, India</h3>
-                        </div>
-                        <p>
-                          Contributed to the creation and enhancement of digital
-                          platforms using Java, Spring Boot, MVC frameworks, and
-                          other technologies. My responsibilities included
-                          building responsive interfaces, implementing secure
-                          authentication systems, and engineering APIs.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="experience-item" data-aos="fade-up">
-                      <div className="experience-left">
-                        <p className="experience-dates">June 2020 - July 2020</p>
-                        <p className="experience-role">
-                          Software Development Intern
-                        </p>
+                      <div className="floating-chip chip-one">
+                        Distributed Systems
                       </div>
 
-                      <div className="divider"></div>
-
-                      <div className="experience-right">
-                        <div className="experience-header">
-                          <img
-                            src={CsSoftSolutionLogo}
-                            alt="CS SOFT Solutions Logo"
-                            className="experience-logo"
-                          />
-                          <h3>CS SOFT Solutions, Mohali, Punjab</h3>
-                        </div>
-                        <p>
-                          Introduced dynamic features to enhance the
-                          functionality of the Diving Specials application and
-                          collaborated with the development team to optimize
-                          user-facing modules.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="experience-item" data-aos="fade-up">
-                      <div className="experience-left">
-                        <p className="experience-dates">June 2019 - Aug 2019</p>
-                        <p className="experience-role">
-                          Software Development Intern
-                        </p>
+                      <div className="floating-chip chip-two">
+                        Cloud Computing
                       </div>
 
-                      <div className="divider"></div>
-
-                      <div className="experience-right">
-                        <div className="experience-header">
-                          <img
-                            src={mahindraLogo}
-                            alt="Tech Mahindra Logo"
-                            className="experience-logo"
-                          />
-                          <h3>Tech Mahindra, New Delhi, India</h3>
-                        </div>
-                        <p>
-                          Implemented an ERP application to automate workflow
-                          processes for CPWD, focusing on task scheduling,
-                          centralized data management, and operational
-                          efficiency.
-                        </p>
+                      <div className="floating-chip chip-three">
+                        Backend Engineering
                       </div>
                     </div>
                   </div>
                 </section>
 
+                {/* EXPERTISE STRIP */}
+                <section className="expertise-strip">
+                  <div className="site-container expertise-strip-inner">
+                    <span>
+                      Distributed Systems
+                    </span>
+
+                    <span>
+                      Cloud Computing
+                    </span>
+
+                    <span>
+                      Software Architecture
+                    </span>
+
+                    <span>
+                      Computer Vision
+                    </span>
+
+                    <span>
+                      Backend Engineering
+                    </span>
+                  </div>
+                </section>
+
+                {/* INTERESTS */}
+                <section
+                  id="interests"
+                  className="section section-light"
+                >
+                  <div className="site-container">
+                    <div className="section-heading">
+                      <div>
+                        <p className="eyebrow">
+                          RESEARCH & TECHNICAL INTERESTS
+                        </p>
+
+                        <h2>
+                          Exploring problems across
+                          <span>
+                            {" "}software and systems.
+                          </span>
+                        </h2>
+                      </div>
+
+                      <p className="section-description">
+                        My interests span reliable distributed software,
+                        scalable cloud platforms, backend architecture,
+                        intelligent applications, and software systems that
+                        operate under real-world constraints.
+                      </p>
+                    </div>
+
+                    <div className="interests-grid">
+                      {interests.map((interest) => (
+                        <article
+                          className={`interest-card interest-${interest.variant}`}
+                          key={interest.number}
+                          data-aos="fade-up"
+                        >
+                          <span className="card-number">
+                            {interest.number}
+                          </span>
+
+                          <div>
+                            <h3>
+                              {interest.title}
+                            </h3>
+
+                            <p>
+                              {interest.description}
+                            </p>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* PROJECTS */}
+                <section
+                  id="projects"
+                  className="section section-dark projects-section"
+                >
+                  <div className="site-container">
+                    <div className="section-heading section-heading-dark">
+                      <div>
+                        <p className="eyebrow eyebrow-light">
+                          SELECTED PROJECTS
+                        </p>
+
+                        <h2>
+                          Engineering and research
+                          <span>
+                            {" "}across multiple domains.
+                          </span>
+                        </h2>
+                      </div>
+
+                      <p className="section-description">
+                        Selected work spanning distributed systems,
+                        cloud infrastructure, database engineering,
+                        computer vision, full-stack systems, and applied AI.
+                      </p>
+                    </div>
+
+                    <div className="projects-grid">
+                      {projects.map((project, index) => (
+                        <article
+                          className={`project-card ${
+                            project.featured
+                              ? "project-card-featured"
+                              : ""
+                          }`}
+                          key={project.title}
+                          data-aos="fade-up"
+                        >
+                          <div className="project-image">
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                            />
+
+                            <div className="project-overlay" />
+
+                            <span className="project-number">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            <span className="project-category">
+                              {project.category}
+                            </span>
+                          </div>
+
+                          <div className="portfolio-project-content">
+                            {project.featured && (
+                              <span className="featured-project-label">
+                                Featured Research Project
+                              </span>
+                            )}
+
+                            <h3>
+                              {project.title}
+                            </h3>
+
+                            <p>
+                              {project.description}
+                            </p>
+
+                            <div className="tag-list dark-tags">
+                              {project.tech.map((technology) => (
+                                <span key={technology}>
+                                  {technology}
+                                </span>
+                              ))}
+                            </div>
+
+                            <Link
+                              to={project.link}
+                              className="project-link"
+                            >
+                              View project
+                              <span>↗</span>
+                            </Link>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* EXPERIENCE */}
+                <section
+                  id="experience"
+                  className="section section-light"
+                >
+                  <div className="site-container">
+                    <div className="section-heading">
+                      <div>
+                        <p className="eyebrow">
+                          PROFESSIONAL EXPERIENCE
+                        </p>
+
+                        <h2>
+                          Engineering in
+                          <span>
+                            {" "}production environments.
+                          </span>
+                        </h2>
+                      </div>
+
+                      <p className="section-description">
+                        Professional work across backend development,
+                        enterprise systems, workflow automation, APIs,
+                        platform migration, and production software delivery.
+                      </p>
+                    </div>
+
+                    <div className="experience-list">
+                      {experiences.map((experience) => (
+                        <article
+                          className="experience-row"
+                          key={`${experience.company}-${experience.year}`}
+                          data-aos="fade-up"
+                        >
+                          <div className="experience-year">
+                            {experience.year}
+                          </div>
+
+                          <div className="experience-timeline">
+                            <span />
+                          </div>
+
+                          <div className="experience-card">
+                            <div className="experience-heading">
+                              <div className="company-logo">
+                                <img
+                                  src={experience.logo}
+                                  alt={`${experience.company} logo`}
+                                />
+                              </div>
+
+                              <div>
+                                <p>
+                                  {experience.company}
+                                </p>
+
+                                <h3>
+                                  {experience.role}
+                                </h3>
+                              </div>
+                            </div>
+
+                            <p className="experience-description">
+                              {experience.description}
+                            </p>
+
+                            {experience.tech.length > 0 && (
+                              <div className="tag-list light-tags">
+                                {experience.tech.map((technology) => (
+                                  <span key={technology}>
+                                    {technology}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* EDUCATION */}
                 <section
                   id="education"
-                  className="education"
-                  data-aos="fade-left"
+                  className="section education-section"
                 >
-                  <h2>Education</h2>
+                  <div className="site-container">
+                    <div className="simple-heading">
+                      <p className="eyebrow">
+                        EDUCATION
+                      </p>
 
-                  <div className="education-content">
-                    <div className="education-item" data-aos="zoom-in">
-                      <div className="education-left">
-                        <p className="education-dates">Sept 2023 - Dec 2025</p>
-                        <p className="education-degree">Master's Degree</p>
-                      </div>
-
-                      <div className="divider"></div>
-
-                      <div className="education-right">
-                        <h3>Northeastern University, Boston, MA</h3>
-                        <p>
-                          Currently pursuing a Master of Science in Software
-                          Engineering Systems. My studies emphasize web design,
-                          cloud computing, database management, user experience
-                          engineering, and object-oriented design.
-                        </p>
-                      </div>
+                      <h2>
+                        Academic
+                        <span>
+                          {" "}foundation.
+                        </span>
+                      </h2>
                     </div>
 
-                    <div className="education-item" data-aos="zoom-in">
-                      <div className="education-left">
-                        <p className="education-dates">Sept 2017 - Aug 2021</p>
-                        <p className="education-degree">Bachelor's Degree</p>
-                      </div>
+                    <div className="education-grid">
+                      <article
+                        className="education-card education-featured"
+                        data-aos="fade-up"
+                      >
+                        <span className="education-year">
+                          2023 — 2025
+                        </span>
 
-                      <div className="divider"></div>
-
-                      <div className="education-right">
                         <h3>
-                          Guru Gobind Singh Indraprastha University, New Delhi,
-                          India
+                          Northeastern University
                         </h3>
-                        <p>
-                          Graduated with a Bachelor of Technology in Computer
-                          Science, with coursework in Java, data structures,
-                          algorithms, databases, operating systems, and software
-                          development.
+
+                        <h4>
+                          Master of Science in Software Engineering Systems
+                        </h4>
+
+                        <p className="school-location">
+                          Boston, Massachusetts
                         </p>
-                      </div>
+
+                        <div className="education-divider" />
+
+                        <p className="education-copy">
+                          Graduate study spanning cloud computing, software
+                          architecture, databases, object-oriented design, and
+                          modern software engineering systems.
+                        </p>
+
+                        <div className="tag-list education-dark-tags">
+                          <span>
+                            Cloud Computing
+                          </span>
+
+                          <span>
+                            Architecture
+                          </span>
+
+                          <span>
+                            Databases
+                          </span>
+
+                          <span>
+                            Systems
+                          </span>
+                        </div>
+                      </article>
+
+                      <article
+                        className="education-card"
+                        data-aos="fade-up"
+                      >
+                        <span className="education-year">
+                          2017 — 2021
+                        </span>
+
+                        <h3>
+                          Guru Gobind Singh Indraprastha University
+                        </h3>
+
+                        <h4>
+                          Bachelor of Technology in Computer Science
+                        </h4>
+
+                        <p className="school-location">
+                          New Delhi, India
+                        </p>
+
+                        <div className="education-divider" />
+
+                        <p className="education-copy">
+                          Studied algorithms, data structures, databases,
+                          operating systems, Java, and software development.
+                        </p>
+
+                        <div className="tag-list light-tags">
+                          <span>
+                            Algorithms
+                          </span>
+
+                          <span>
+                            Data Structures
+                          </span>
+
+                          <span>
+                            Operating Systems
+                          </span>
+
+                          <span>
+                            Java
+                          </span>
+                        </div>
+                      </article>
                     </div>
                   </div>
                 </section>
 
-                <section id="projects" className="projects" data-aos="fade-up">
-                  <h2>Recent Projects</h2>
-
-                  <div className="projects-content">
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={SelfHealingImage}
-                        alt="Self-Healing Agent Infrastructure"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">
-                          Self-Healing Agent Infrastructure
-                        </h3>
-
-                        <p className="project-role">
-                          <strong>Role:</strong> Backend & Distributed Systems
-                          Engineer
-                        </p>
-
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Jan 2026 – May 2026
-                        </p>
-
-                        <p className="project-meta">
-                          <strong>Team:</strong> 1
-                        </p>
-
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Processed 620+ workflow
-                          executions, achieving 84.5% workflow success rates
-                          and automatically recovering 239 failed tasks.
-                        </p>
-
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> Golang, Redis,
-                          PostgreSQL, Docker, Next.js, Recharts
-                        </p>
-
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Distributed workflows needed
-                          automatic recovery from task failures and worker
-                          crashes without manual intervention.
-                        </p>
-
-                        <Link
-                          to="/projects/self-healing-agent-infrastructure"
-                          className="project-link"
-                        >
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={CloudImage}
-                        alt="Cloud Native Web App"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">Cloud Native Web App</h3>
-                        <p className="project-role">
-                          <strong>Role:</strong> Cloud & Backend Engineer
-                        </p>
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Jan 2024 – Apr 2024
-                        </p>
-                        <p className="project-meta">
-                          <strong>Team:</strong> 1
-                        </p>
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Automated deployments and
-                          standardized infrastructure, significantly reducing
-                          manual setup and release effort.
-                        </p>
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> Python Flask, Google
-                          Cloud Platform, Terraform, CI/CD pipelines
-                        </p>
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Teams needed a scalable,
-                          cloud-native backend that could be deployed reliably
-                          without manual infrastructure changes.
-                        </p>
-                        <Link
-                          to="/projects/cloud-native-web-app"
-                          className="project-link"
-                        >
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={CarRentalImage}
-                        alt="Car Rental System"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">Car Rental System</h3>
-                        <p className="project-role">
-                          <strong>Role:</strong> Full-Stack Developer
-                        </p>
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Jan 2024 – Apr 2024
-                        </p>
-                        <p className="project-meta">
-                          <strong>Team:</strong> 3
-                        </p>
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Centralized vehicle,
-                          customer, and booking data, reducing manual tracking.
-                        </p>
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> Java, Spring Boot, SQL,
-                          REST APIs
-                        </p>
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Rental businesses needed a
-                          single system to manage inventory, customers, and
-                          transactions.
-                        </p>
-                        <Link
-                          to="/projects/car-rental-system"
-                          className="project-link"
-                        >
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={DaycareImage}
-                        alt="Day Care System"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">Day Care System</h3>
-                        <p className="project-role">
-                          <strong>Role:</strong> Backend Developer & Data
-                          Modeler
-                        </p>
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Oct 2023 - Dec 2023
-                        </p>
-                        <p className="project-meta">
-                          <strong>Team:</strong> 3
-                        </p>
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Digitized student profiles
-                          and immunization records to improve compliance
-                          tracking.
-                        </p>
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> Java, Spring, REST
-                          services, SQL database
-                        </p>
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Daycare centers relied on
-                          spreadsheets and paperwork to manage student data.
-                        </p>
-                        <Link
-                          to="/projects/day-care-system"
-                          className="project-link"
-                        >
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={FaceMaskTrackerImage}
-                        alt="Social Distance Tracker"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">
-                          Social Distance Tracker
-                        </h3>
-                        <p className="project-role">
-                          <strong>Role:</strong> Computer Vision Developer
-                        </p>
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Jan 2021 - Mar 2021
-                        </p>
-                        <p className="project-meta">
-                          <strong>Team:</strong> 2
-                        </p>
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Provided real-time visual
-                          feedback on mask and distancing violations.
-                        </p>
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> Python, OpenCV, machine
-                          learning utilities
-                        </p>
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Organizations needed a way
-                          to monitor compliance without manually reviewing
-                          footage.
-                        </p>
-                        <Link
-                          to="/projects/social-distance-tracker"
-                          className="project-link"
-                        >
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={ProShopImage}
-                        alt="Pro Shop"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">Pro Shop</h3>
-                        <p className="project-role">
-                          <strong>Role:</strong> Full-Stack Developer
-                        </p>
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Jun 2021 - Aug 2021
-                        </p>
-                        <p className="project-meta">
-                          <strong>Team:</strong> 4
-                        </p>
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Designed an end-to-end
-                          shopping flow with secure checkout and review
-                          analysis.
-                        </p>
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> React, Node.js, Express,
-                          MongoDB, Stripe, Python
-                        </p>
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Sports stores needed a
-                          modern e-commerce experience with secure payments.
-                        </p>
-                        <Link to="/projects/pro-shop" className="project-link">
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="project-item" data-aos="zoom-in">
-                      <img
-                        src={SocialMediaImage}
-                        alt="Connect Engine"
-                        className="project-image"
-                      />
-                      <div className="project-description">
-                        <h3 className="project-title">Connect Engine</h3>
-                        <p className="project-role">
-                          <strong>Role:</strong> Backend & Dashboard Developer
-                        </p>
-                        <p className="project-meta">
-                          <strong>Timeline:</strong> Sep 2023 – Dec 2023
-                        </p>
-                        <p className="project-meta">
-                          <strong>Team:</strong> 4
-                        </p>
-                        <p className="project-metric">
-                          <strong>Impact:</strong> Unified engagement analytics
-                          from multiple platforms into a single dashboard.
-                        </p>
-                        <p className="project-tech">
-                          <strong>Tech Stack:</strong> React, Node.js, REST
-                          APIs, MongoDB, analytics libraries
-                        </p>
-                        <p className="project-problem">
-                          <strong>Problem:</strong> Social media teams needed a
-                          single view of performance metrics.
-                        </p>
-                        <Link
-                          to="/projects/connect-engine"
-                          className="project-link"
-                        >
-                          Learn More
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
+                {/* CERTIFICATIONS */}
                 <section
-                  className="certification"
-                  id="certification"
-                  data-aos="fade-up"
+                  id="certifications"
+                  className="section section-light"
                 >
-                  <h2>Certifications</h2>
-                  <div className="certification-container">
-                    <div className="certification-item" data-aos="zoom-in">
-                      <img
-                        src={Certification1Image}
-                        alt="Certification 1"
-                        className="certification-image-gcp"
-                      />
-                      <p>
-                        <a
-                          href="https://www.credential.net/8751610d-f100-42a8-830b-83320b268a78#acc.BoUTfKzS"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Cloud Practitioner Certification
-                        </a>
+                  <div className="site-container">
+                    <div className="simple-heading">
+                      <p className="eyebrow">
+                        CERTIFICATIONS
                       </p>
+
+                      <h2>
+                        Cloud &
+                        <span>
+                          {" "}platform expertise.
+                        </span>
+                      </h2>
                     </div>
 
-                    <div
-                      className="certification-item"
-                      data-aos="zoom-in"
-                      data-aos-delay="200"
-                    >
-                      <img
-                        src={Certification2Image}
-                        alt="Certification 2"
-                        className="certification-image-azure-fundamentals"
-                      />
-                      <p>
-                        <a
-                          href="https://www.credly.com/badges/3ca5d54b-a780-4af8-85f7-b3c988613943/linked_in_profile"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                    <div className="certifications-grid">
+                      {certifications.map((certification) => (
+                        <Link
+                          to={`/certifications/${certification.slug}`}
+                          className="certification-card"
+                          key={certification.title}
                         >
-                          Azure Fundamentals Certification
-                        </a>
-                      </p>
-                    </div>
+                          <div className="certification-image">
+                            <img
+                              src={certification.image}
+                              alt={certification.title}
+                            />
+                          </div>
 
-                    <div
-                      className="certification-item"
-                      data-aos="zoom-in"
-                      data-aos-delay="400"
-                    >
-                      <img
-                        src={Certification3Image}
-                        alt="Certification 3"
-                        className="certification-image-azure-administrator"
-                      />
-                      <p>
-                        <a
-                          href="https://www.credly.com/badges/05ffb555-e0fb-430d-9512-de62f6563ffd/public_url"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Azure Administrator Certification
-                        </a>
-                      </p>
+                          <p>
+                            {certification.provider}
+                          </p>
+
+                          <h3>
+                            {certification.title}
+                          </h3>
+
+                          <span>
+                            View certification ↗
+                          </span>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </section>
 
-                <section className="recognition" id="recognition" data-aos="fade-up">
-                  <h2>Recognition</h2>
-
-                  <div className="recognition-container">
-                    <div className="recognition-card card-excellence" data-aos="zoom-in">
-                      <h3>Excellence Award</h3>
-                      <p>
-                        During a high-stakes system transition, I supported
-                        onboarding, testing, and deployment of critical
-                        applications to a new platform, earning recognition for
-                        high-quality delivery under pressure.
+                {/* RECOGNITION */}
+                <section className="section recognition-section">
+                  <div className="site-container">
+                    <div className="simple-heading dark-heading">
+                      <p className="eyebrow eyebrow-light">
+                        LEADERSHIP & RECOGNITION
                       </p>
+
+                      <h2>
+                        Beyond
+                        <span>
+                          {" "}engineering.
+                        </span>
+                      </h2>
                     </div>
 
-                    <div
-                      className="recognition-card card-rotaract"
-                      data-aos="zoom-in"
-                      data-aos-delay="200"
-                    >
-                      <h3>Rotaract and IEEE</h3>
-                      <p>
-                        Served as Director of International Services for the
-                        Rotaract Club and IEEE Event Head, organizing hackathons,
-                        technical events, and community initiatives.
-                      </p>
-                    </div>
+                    <div className="recognition-grid">
+                      <article className="recognition-card">
+                        <span>
+                          01
+                        </span>
 
-                    <div
-                      className="recognition-card card-badminton"
-                      data-aos="zoom-in"
-                      data-aos-delay="400"
-                    >
-                      <h3>Gold Medalist Badminton</h3>
-                      <p>
-                        Led the Women’s Badminton Team during undergraduate
-                        studies and won inter-college tournaments, building
-                        discipline, teamwork, and leadership.
-                      </p>
+                        <h3>
+                          Excellence Award
+                        </h3>
+
+                        <p>
+                          Recognized for high-quality delivery during a
+                          high-stakes application migration and platform
+                          transition.
+                        </p>
+                      </article>
+
+                      <article className="recognition-card">
+                        <span>
+                          02
+                        </span>
+
+                        <h3>
+                          IEEE & Rotaract Leadership
+                        </h3>
+
+                        <p>
+                          Organized technical events, hackathons, and
+                          community initiatives through student leadership
+                          roles.
+                        </p>
+                      </article>
+
+                      <article className="recognition-card">
+                        <span>
+                          03
+                        </span>
+
+                        <h3>
+                          Badminton Gold Medalist
+                        </h3>
+
+                        <p>
+                          Led the women's badminton team and competed in
+                          inter-college tournaments during undergraduate
+                          study.
+                        </p>
+                      </article>
                     </div>
                   </div>
                 </section>
-              </div>
+
+                {/* FINAL CTA */}
+                <section className="final-cta">
+                  <div className="final-grid" />
+
+                  <div className="site-container final-cta-content">
+                    <p className="eyebrow eyebrow-light">
+                      RESEARCH · ENGINEERING · COLLABORATION
+                    </p>
+
+                    <h2>
+                      Let's build and study
+                      <span>
+                        {" "}better software systems.
+                      </span>
+                    </h2>
+
+                    <p>
+                      I'm interested in PhD opportunities and research
+                      collaborations across software engineering, distributed
+                      systems, cloud computing, and reliable intelligent
+                      systems.
+                    </p>
+
+                    <Link
+                      to="/contact"
+                      className="button button-primary"
+                    >
+                      Get in touch
+                      <span>↗</span>
+                    </Link>
+                  </div>
+                </section>
+              </main>
             }
           />
 
-          <Route path="/about" element={<AboutPage />} />
+          <Route
+            path="/about"
+            element={<AboutPage />}
+          />
 
           <Route
             path="/projects/self-healing-agent-infrastructure"
             element={<SelfHealingProjectPage />}
           />
+
           <Route
             path="/projects/cloud-native-web-app"
             element={<CloudProjectPage />}
           />
+
           <Route
             path="/projects/car-rental-system"
             element={<CarRentalPage />}
           />
-          <Route path="/projects/day-care-system" element={<DaycarePage />} />
+
+          <Route
+            path="/projects/day-care-system"
+            element={<DaycarePage />}
+          />
+
           <Route
             path="/projects/social-distance-tracker"
             element={<SocialDistancePage />}
           />
-          <Route path="/projects/pro-shop" element={<ProShopPage />} />
+
+          <Route
+            path="/projects/pro-shop"
+            element={<ProShopPage />}
+          />
+
           <Route
             path="/projects/connect-engine"
             element={<ConnectEnginePage />}
           />
-          <Route path="/contact" element={<ContactPage />} />
+
+          <Route
+            path="/certifications/:slug"
+            element={<CertificationPage />}
+          />
+
+          <Route
+            path="/contact"
+            element={<ContactPage />}
+          />
         </Routes>
 
         <Footer />

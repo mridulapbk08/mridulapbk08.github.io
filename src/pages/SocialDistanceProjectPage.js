@@ -1,61 +1,38 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import React from "react";
 
-import "./SocialDistanceProjectPage.css"; // Ensure CSS styles for consistent design
+import ProjectDetailPage from "./ProjectDetailPage";
 
 const SocialDistanceProjectPage = () => {
-  useEffect(() => {
-    // Initialize AOS for animations
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease-in-out", // Smooth animations
-      once: true, // Ensure animations run only once
-    });
-  }, []);
-
   return (
-    <div className="project-page-social" data-aos="fade-in">
-      <header className="project-header" data-aos="fade-down">
-        <h1>Social Distance and Face Mask Detection</h1>
-      </header>
-      <div className="project-content">
-        <h2 data-aos="fade-up">Social Distance and Face Mask Tracker</h2>
-        <p data-aos="fade-up" data-aos-delay="200">
-          The Social Distance and Face Mask Tracker is a real-time monitoring
-          system aimed at enhancing public safety during the COVID-19 pandemic.
-          Using deep learning algorithms and geometric techniques, it detects
-          face mask usage and social distancing violations through video streams
-          from public cameras.
-        </p>
-        <p data-aos="fade-up" data-aos-delay="400">
-          The system identifies individuals, calculates distances, and flags
-          non-compliance in real time, showcasing the practical application of AI
-          and machine learning to support public health efforts effectively.
-        </p>
-      </div>
-      {/* Add the GitHub link below the project content */}
-      <div className="github-link" data-aos="fade-left">
-        <a
-          href="https://github.com/mridulapbk/Social-Distance-and-Face-Mask-Tracker-main"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-            alt="GitHub Logo"
-            style={{
-              width: "24px",
-              height: "24px",
-              verticalAlign: "middle",
-              marginRight: "8px",
-            }}
-          />
-          Visit the GitHub Repository
-        </a>
-      </div>
-      
-    </div>
+    <ProjectDetailPage
+      eyebrow="COMPUTER VISION"
+      title="Social Distance & Face Mask Detection"
+      description="A real-time computer-vision monitoring system designed to detect face-mask usage and social-distancing violations from video streams."
+      tech={[
+        "Python",
+        "OpenCV",
+        "Deep Learning",
+        "Computer Vision",
+      ]}
+      sections={[
+        {
+          title: "Real-Time Video Analysis",
+          content:
+            "Developed a monitoring system that processes video streams from public cameras to identify individuals and evaluate safety compliance in real time.",
+        },
+        {
+          title: "Face Mask Detection",
+          content:
+            "Applied deep-learning techniques to identify whether detected individuals were correctly wearing face masks, demonstrating practical computer-vision classification.",
+        },
+        {
+          title: "Social Distance Monitoring",
+          content:
+            "Used geometric techniques to calculate distances between detected individuals and flag social-distancing violations within video frames.",
+        },
+      ]}
+      githubUrl="https://github.com/mridulapbk/Social-Distance-and-Face-Mask-Tracker-main"
+    />
   );
 };
 

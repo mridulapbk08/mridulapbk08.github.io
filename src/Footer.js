@@ -1,76 +1,105 @@
 import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faGithub,
-  faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faFileDownload } from "@fortawesome/free-solid-svg-icons"; // Import new icons
+
+import {
+  faEnvelope,
+  faFileDownload,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section">
-          <h4>Contact</h4>
-          <div className="footer-icon-text">
-            <FontAwesomeIcon icon={faEnvelope} size="1x" />
-            <a
-              href="mailto:prabhakar.m@northeastern.edu"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              prabhakar.m@northeastern.edu
-            </a>
+      <div className="footer-main">
+        <div className="footer-brand-column">
+          <div className="footer-logo">
+            MP<span>.</span>
           </div>
-          <p>Phone: 857-746-1898</p>
+
+          <p>
+            Software engineer and researcher interested in distributed
+            systems, cloud computing, backend engineering, and reliable
+            software systems.
+          </p>
+
+          <span className="footer-location">
+            Boston, Massachusetts
+          </span>
         </div>
-        <div className="footer-section">
-          <h4>Location</h4>
-          <p>239 Heath Street, Boston, MA 02130</p>
+
+        <div className="footer-links-column">
+          <p className="footer-title">
+            Contact
+          </p>
+
+          <a href="mailto:prabhakar.m@northeastern.edu">
+            <FontAwesomeIcon icon={faEnvelope} />
+
+            <span>
+              Email
+            </span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/mridula-prabhakar-b28b24208/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+
+            <span>
+              LinkedIn
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/mridulapbk?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+
+            <span>
+              GitHub
+            </span>
+          </a>
         </div>
-        <div className="footer-section">
-          <h4>Follow</h4>
-          <div className="social-icons">
-            <a
-              href="https://github.com/mridulapbk?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FontAwesomeIcon icon={faGithub} size="2x" />
-            </a>
-            <a
-              href="https://www.instagram.com/mridulaaprabhakar?igsh=MTRlZ2FmMXBhM3Y5aA%3D%3D&utm_source=qr"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mridula-prabhakar-b28b24208/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="2x" />
-            </a>
-          </div>
+
+        <div className="footer-links-column">
+          <p className="footer-title">
+            Resume
+          </p>
+
+          <a
+            href="https://drive.google.com/drive/u/0/folders/1sv9Zdnla2z7ygnnqWq-Dox7FNtsKktBR"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faFileDownload} />
+
+            <span>
+              View Resume
+            </span>
+          </a>
         </div>
-        <div className="footer-section">
-          <h4>Download Resume</h4>
-          <div className="footer-icon-text">
-            <FontAwesomeIcon icon={faFileDownload} size="1x" />
-            <a
-              href="https://drive.google.com/drive/u/0/folders/1sv9Zdnla2z7ygnnqWq-Dox7FNtsKktBR"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume 
-            </a>
-          </div>
+      </div>
+
+      <div className="footer-bottom">
+        <div className="footer-bottom-inner">
+          <span>
+            © {new Date().getFullYear()} Mridula Prabhakar
+          </span>
+
+          <span>
+            Built with React
+          </span>
         </div>
       </div>
     </footer>

@@ -32,7 +32,7 @@ const SelfHealingProjectPage = () => {
             "Evaluated the platform using 620+ workflow executions, achieving an 84.5% workflow success rate while automatically recovering 239 failed tasks. Built dashboards for throughput, recovery latency, worker utilization, and task distribution.",
         },
       ]}
-      githubUrl="https://github.com/mridulapbk/self-healing-agent-infra"
+      githubUrl="https://github.com/mridulapbk08/self-healing-agent-infra"
     />
   );
 };

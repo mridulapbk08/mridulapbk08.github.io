@@ -32,7 +32,7 @@ const CloudProjectPage = () => {
             "The entire cloud infrastructure was provisioned and managed using Terraform, ensuring reproducibility and scalability. This included defining resources for Compute Engine instances, Cloud SQL databases, Pub/Sub topics, and serverless Cloud Functions. Utilizing Terraform's Infrastructure as Code (IaC) capabilities, the setup was standardized across environments, enhancing collaboration, simplifying infrastructure modifications, and ensuring high reliability.",
         },
       ]}
-      githubUrl="https://github.com/YOUR-REAL-REPO-LINK"
+      githubUrl="https://github.com/mridulapbk08/Cloud_Project.git"
     />
   );
 };

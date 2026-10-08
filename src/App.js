@@ -13,11 +13,15 @@ import "aos/dist/aos.css";
 import "./App.css";
 import Footer from "./Footer";
 
-// Images
+// =====================================================
+// IMAGES
+// =====================================================
+
 import MridulaImage from "./assets/images/Mridula_Prabhakar.jpg";
 
 import TrustCampusImage from "./assets/images/software.avif";
 import VeraSEImage from "./assets/images/programming.jpg";
+
 import SelfHealingImage from "./assets/images/self-healing-dashboard.png";
 import CloudImage from "./assets/images/cloud.webp";
 import CarRentalImage from "./assets/images/cars.webp";
@@ -35,11 +39,15 @@ import accentureLogo from "./assets/images/accenture.png";
 import CsSoftSolutionLogo from "./assets/images/solutions.png";
 import mahindraLogo from "./assets/images/mahindra.png";
 
-// Pages
+// =====================================================
+// PAGES
+// =====================================================
+
 import AboutPage from "./pages/AboutPage.js";
 
 import TrustCampusProjectPage from "./pages/TrustCampusProjectPage.js";
 import VeraSEProjectPage from "./pages/VeraSEProjectPage.js";
+
 import SelfHealingProjectPage from "./pages/SelfHealingProjectPage.js";
 import CloudProjectPage from "./pages/CloudProjectPage.js";
 import CarRentalPage from "./pages/CarRentalProjectPage.js";
@@ -50,6 +58,10 @@ import ConnectEnginePage from "./pages/ConnectEngineProjectPage.js";
 
 import ContactPage from "./pages/ContactPage.js";
 import CertificationPage from "./pages/CertificationPage.js";
+
+// =====================================================
+// INTERESTS
+// =====================================================
 
 const interests = [
   {
@@ -82,6 +94,10 @@ const interests = [
   },
 ];
 
+// =====================================================
+// PROJECTS
+// =====================================================
+
 const projects = [
   {
     category: "Trustworthy AI · RAG · Research",
@@ -100,6 +116,7 @@ const projects = [
     link: "/projects/trust-campus",
     featured: true,
   },
+
   {
     category: "AI for Software Engineering · Research",
     title: "VERA-SE",
@@ -116,6 +133,7 @@ const projects = [
     link: "/projects/vera-se",
     featured: true,
   },
+
   {
     category: "Distributed Systems · Research",
     title: "Self-Healing Agent Infrastructure",
@@ -132,61 +150,103 @@ const projects = [
     link: "/projects/self-healing-agent-infrastructure",
     featured: true,
   },
+
   {
     category: "Cloud Engineering",
     title: "Cloud-Native Web Application",
     image: CloudImage,
     description:
       "A scalable Flask application deployed on Google Cloud with REST APIs, automated CI/CD pipelines, serverless email verification, and infrastructure managed using Terraform.",
-    tech: ["Python", "Flask", "GCP", "Terraform", "CI/CD"],
+    tech: [
+      "Python",
+      "Flask",
+      "GCP",
+      "Terraform",
+      "CI/CD",
+    ],
     link: "/projects/cloud-native-web-app",
   },
+
   {
     category: "Computer Vision",
     title: "Social Distance & Face Mask Tracker",
     image: FaceMaskTrackerImage,
     description:
       "A real-time computer vision system that detects face-mask usage and social-distancing violations from video streams using deep-learning and geometric techniques.",
-    tech: ["Python", "OpenCV", "Deep Learning"],
+    tech: [
+      "Python",
+      "OpenCV",
+      "Deep Learning",
+    ],
     link: "/projects/social-distance-tracker",
   },
+
   {
     category: "Full-Stack Development",
     title: "Connect Engine",
     image: SocialMediaImage,
     description:
       "A MERN-stack social media platform with secure authentication, personalized content feeds, real-time posting, administration tools, and responsive user experiences.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "JWT",
+    ],
     link: "/projects/connect-engine",
   },
+
   {
     category: "Database Systems",
     title: "Car Rental System",
     image: CarRentalImage,
     description:
       "A database-driven rental management system using optimized SQL design, views, stored procedures, indexes, triggers, encryption, CRUD interfaces, and Power BI visualization.",
-    tech: ["SQL", "JavaScript", "Power BI", "Database Design"],
+    tech: [
+      "SQL",
+      "JavaScript",
+      "Power BI",
+      "Database Design",
+    ],
     link: "/projects/car-rental-system",
   },
+
   {
     category: "Information Systems",
     title: "Day Care Management System",
     image: DaycareImage,
     description:
       "A Java-based student information system for managing records, immunization data, performance tracking, and CSV-based data operations through a desktop interface.",
-    tech: ["Java", "Swing", "SQL", "CSV"],
+    tech: [
+      "Java",
+      "Swing",
+      "SQL",
+      "CSV",
+    ],
     link: "/projects/day-care-system",
   },
+
   {
     category: "Web Engineering · AI",
     title: "Pro Shop",
     image: ProShopImage,
     description:
       "A full-stack e-commerce application featuring product management, simulated PayPal transactions, reviews, and sentiment analysis to surface positive and negative customer feedback.",
-    tech: ["React", "Node.js", "MongoDB", "PayPal", "NLP"],
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "PayPal",
+      "NLP",
+    ],
     link: "/projects/pro-shop",
   },
 ];
+
+// =====================================================
+// EXPERIENCE
+// =====================================================
 
 const experiences = [
   {
@@ -196,8 +256,14 @@ const experiences = [
     logo: mindlanceLogo,
     description:
       "Developed backend services in Golang for an automated job-application platform, including APIs, asynchronous processing, workflow automation, scheduling, and reliability improvements.",
-    tech: ["Golang", "Backend", "REST APIs", "Automation"],
+    tech: [
+      "Golang",
+      "Backend",
+      "REST APIs",
+      "Automation",
+    ],
   },
+
   {
     year: "2021 — 2023",
     company: "Accenture",
@@ -205,8 +271,14 @@ const experiences = [
     logo: accentureLogo,
     description:
       "Built and enhanced enterprise applications using Java, Spring Boot, authentication systems, REST APIs, MVC frameworks, and responsive interfaces.",
-    tech: ["Java", "Spring Boot", "REST APIs", "Enterprise Systems"],
+    tech: [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "Enterprise Systems",
+    ],
   },
+
   {
     year: "2020",
     company: "CS Soft Solutions",
@@ -216,6 +288,7 @@ const experiences = [
       "Added dynamic functionality to the Diving Specials application and collaborated with the development team on user-facing software modules.",
     tech: [],
   },
+
   {
     year: "2019",
     company: "Tech Mahindra",
@@ -227,6 +300,10 @@ const experiences = [
   },
 ];
 
+// =====================================================
+// CERTIFICATIONS
+// =====================================================
+
 const certifications = [
   {
     slug: "google-cloud-associate-engineer",
@@ -234,12 +311,14 @@ const certifications = [
     title: "Associate Cloud Engineer",
     image: Certification1Image,
   },
+
   {
     slug: "azure-fundamentals",
     provider: "Microsoft Azure",
     title: "Azure Fundamentals",
     image: Certification2Image,
   },
+
   {
     slug: "azure-administrator",
     provider: "Microsoft Azure",
@@ -247,6 +326,10 @@ const certifications = [
     image: Certification3Image,
   },
 ];
+
+// =====================================================
+// APP
+// =====================================================
 
 const App = () => {
   useEffect(() => {
@@ -261,33 +344,67 @@ const App = () => {
   return (
     <Router>
       <div className="site">
+        {/* =====================================================
+            NAVBAR
+        ===================================================== */}
+
         <header className="navbar">
           <div className="site-container navbar-inner">
-            <Link to="/" className="site-logo">
+            <Link
+              to="/"
+              className="site-logo"
+            >
               MP<span>.</span>
             </Link>
 
             <nav className="desktop-nav">
-              <a href="/#interests">Interests</a>
-              <a href="/#projects">Projects</a>
-              <a href="/#experience">Experience</a>
-              <a href="/#education">Education</a>
+              <a href="/#interests">
+                Interests
+              </a>
 
-              <Link to="/about">About</Link>
+              <a href="/#projects">
+                Projects
+              </a>
 
-              <Link to="/contact" className="nav-contact">
+              <a href="/#experience">
+                Experience
+              </a>
+
+              <a href="/#education">
+                Education
+              </a>
+
+              <Link to="/about">
+                About
+              </Link>
+
+              <Link
+                to="/contact"
+                className="nav-contact"
+              >
                 Contact
               </Link>
             </nav>
           </div>
         </header>
 
+        {/* =====================================================
+            ROUTES
+        ===================================================== */}
+
         <Routes>
+          {/* =====================================================
+              HOME
+          ===================================================== */}
+
           <Route
             path="/"
             element={
               <main>
-                {/* HERO */}
+                {/* =====================================================
+                    HERO
+                ===================================================== */}
+
                 <section className="hero">
                   <div className="hero-grid-background" />
                   <div className="hero-orb hero-orb-one" />
@@ -310,19 +427,21 @@ const App = () => {
                       <h1>
                         Mridula
                         <br />
-                        <span>Prabhakar.</span>
+                        <span>
+                          Prabhakar.
+                        </span>
                       </h1>
 
                       <p className="hero-main-copy">
-                        Researching trustworthy and autonomous software systems
-                        across AI reliability, software verification,
+                        Researching trustworthy and autonomous software
+                        systems across AI reliability, software verification,
                         distributed computing, and intelligent infrastructure.
                       </p>
 
                       <p className="hero-support-copy">
                         I combine research in evidence-aware AI, autonomous
-                        software repair, and self-healing systems with practical
-                        experience building production software.
+                        software repair, and self-healing systems with
+                        practical experience building production software.
                       </p>
 
                       <div className="hero-actions">
@@ -331,7 +450,9 @@ const App = () => {
                           className="button button-primary"
                         >
                           Explore my work
-                          <span>↗</span>
+                          <span>
+                            ↗
+                          </span>
                         </a>
 
                         <Link
@@ -344,18 +465,33 @@ const App = () => {
 
                       <div className="hero-stats">
                         <div>
-                          <strong>3</strong>
-                          <span>Research projects</span>
+                          <strong>
+                            3
+                          </strong>
+
+                          <span>
+                            Research projects
+                          </span>
                         </div>
 
                         <div>
-                          <strong>4</strong>
-                          <span>Engineering roles</span>
+                          <strong>
+                            220+
+                          </strong>
+
+                          <span>
+                            Students supported
+                          </span>
                         </div>
 
                         <div>
-                          <strong>3</strong>
-                          <span>Cloud certifications</span>
+                          <strong>
+                            3
+                          </strong>
+
+                          <span>
+                            Cloud certifications
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -388,18 +524,38 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* EXPERTISE STRIP */}
+                {/* =====================================================
+                    EXPERTISE STRIP
+                ===================================================== */}
+
                 <section className="expertise-strip">
                   <div className="site-container expertise-strip-inner">
-                    <span>Trustworthy AI</span>
-                    <span>Software Reliability</span>
-                    <span>Distributed Systems</span>
-                    <span>Cloud Computing</span>
-                    <span>Backend Engineering</span>
+                    <span>
+                      Trustworthy AI
+                    </span>
+
+                    <span>
+                      Software Reliability
+                    </span>
+
+                    <span>
+                      Distributed Systems
+                    </span>
+
+                    <span>
+                      Cloud Computing
+                    </span>
+
+                    <span>
+                      Backend Engineering
+                    </span>
                   </div>
                 </section>
 
-                {/* INTERESTS */}
+                {/* =====================================================
+                    INTERESTS
+                ===================================================== */}
+
                 <section
                   id="interests"
                   className="section section-light"
@@ -439,7 +595,9 @@ const App = () => {
                           </span>
 
                           <div>
-                            <h3>{interest.title}</h3>
+                            <h3>
+                              {interest.title}
+                            </h3>
 
                             <p>
                               {interest.description}
@@ -451,7 +609,10 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* PROJECTS */}
+                {/* =====================================================
+                    PROJECTS
+                ===================================================== */}
+
                 <section
                   id="projects"
                   className="section section-dark projects-section"
@@ -514,7 +675,9 @@ const App = () => {
                               </span>
                             )}
 
-                            <h3>{project.title}</h3>
+                            <h3>
+                              {project.title}
+                            </h3>
 
                             <p>
                               {project.description}
@@ -533,7 +696,9 @@ const App = () => {
                               className="project-link"
                             >
                               View project
-                              <span>↗</span>
+                              <span>
+                                ↗
+                              </span>
                             </Link>
                           </div>
                         </article>
@@ -542,7 +707,10 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* EXPERIENCE */}
+                {/* =====================================================
+                    EXPERIENCE
+                ===================================================== */}
+
                 <section
                   id="experience"
                   className="section section-light"
@@ -594,7 +762,9 @@ const App = () => {
                               </div>
 
                               <div>
-                                <p>{experience.company}</p>
+                                <p>
+                                  {experience.company}
+                                </p>
 
                                 <h3>
                                   {experience.role}
@@ -622,7 +792,10 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* EDUCATION */}
+                {/* =====================================================
+                    EDUCATION
+                ===================================================== */}
+
                 <section
                   id="education"
                   className="section education-section"
@@ -665,16 +838,28 @@ const App = () => {
                         <div className="education-divider" />
 
                         <p className="education-copy">
-                          Graduate study spanning cloud computing, software
-                          architecture, databases, object-oriented design, and
-                          modern software engineering systems.
+                          Graduate study spanning cloud computing,
+                          software architecture, databases,
+                          object-oriented design, and modern software
+                          engineering systems.
                         </p>
 
                         <div className="tag-list education-dark-tags">
-                          <span>Cloud Computing</span>
-                          <span>Architecture</span>
-                          <span>Databases</span>
-                          <span>Systems</span>
+                          <span>
+                            Cloud Computing
+                          </span>
+
+                          <span>
+                            Architecture
+                          </span>
+
+                          <span>
+                            Databases
+                          </span>
+
+                          <span>
+                            Systems
+                          </span>
                         </div>
                       </article>
 
@@ -706,17 +891,31 @@ const App = () => {
                         </p>
 
                         <div className="tag-list light-tags">
-                          <span>Algorithms</span>
-                          <span>Data Structures</span>
-                          <span>Operating Systems</span>
-                          <span>Java</span>
+                          <span>
+                            Algorithms
+                          </span>
+
+                          <span>
+                            Data Structures
+                          </span>
+
+                          <span>
+                            Operating Systems
+                          </span>
+
+                          <span>
+                            Java
+                          </span>
                         </div>
                       </article>
                     </div>
                   </div>
                 </section>
 
-                {/* CERTIFICATIONS */}
+                {/* =====================================================
+                    CERTIFICATIONS
+                ===================================================== */}
+
                 <section
                   id="certifications"
                   className="section section-light"
@@ -766,69 +965,95 @@ const App = () => {
                   </div>
                 </section>
 
-                {/* RECOGNITION */}
+                {/* =====================================================
+                    ACADEMIC LEADERSHIP & RECOGNITION
+                ===================================================== */}
+
                 <section className="section recognition-section">
                   <div className="site-container">
                     <div className="simple-heading dark-heading">
                       <p className="eyebrow eyebrow-light">
-                        LEADERSHIP & RECOGNITION
+                        ACADEMIC LEADERSHIP & RECOGNITION
                       </p>
 
                       <h2>
-                        Beyond
+                        Teaching, mentorship &
                         <span>
-                          {" "}engineering.
+                          {" "}community leadership.
                         </span>
                       </h2>
                     </div>
 
                     <div className="recognition-grid">
-                      <article className="recognition-card">
-                        <span>01</span>
+                      <article
+                        className="recognition-card"
+                        data-aos="fade-up"
+                      >
+                        <span>
+                          01
+                        </span>
 
                         <h3>
-                          Excellence Award
+                          Graduate Teaching & Mentorship
                         </h3>
 
                         <p>
-                          Recognized for high-quality delivery during a
-                          high-stakes application migration and platform
-                          transition.
+                          Served as a Graduate Lead Teaching Assistant and
+                          Teaching Assistant at Northeastern University,
+                          supporting and mentoring more than 220 students
+                          across graduate-level coursework.
                         </p>
                       </article>
 
-                      <article className="recognition-card">
-                        <span>02</span>
+                      <article
+                        className="recognition-card"
+                        data-aos="fade-up"
+                        data-aos-delay="60"
+                      >
+                        <span>
+                          02
+                        </span>
 
                         <h3>
-                          IEEE & Rotaract Leadership
+                          Teaching Assistant Peer Mentor
                         </h3>
 
                         <p>
-                          Organized technical events, hackathons, and
-                          community initiatives through student leadership
-                          roles.
+                          Selected as a TA Peer Mentor, supporting
+                          approximately 200 teaching assistants through
+                          onboarding, guidance, peer support, and academic
+                          community development.
                         </p>
                       </article>
 
-                      <article className="recognition-card">
-                        <span>03</span>
+                      <article
+                        className="recognition-card"
+                        data-aos="fade-up"
+                        data-aos-delay="120"
+                      >
+                        <span>
+                          03
+                        </span>
 
                         <h3>
-                          Badminton Gold Medalist
+                          Professional & Technical Leadership
                         </h3>
 
                         <p>
-                          Led the women's badminton team and competed in
-                          inter-college tournaments during undergraduate
-                          study.
+                          Recognized for high-quality engineering delivery
+                          and contributed to technical and community
+                          initiatives through IEEE, Rotaract, and student
+                          leadership activities.
                         </p>
                       </article>
                     </div>
                   </div>
                 </section>
 
-                {/* FINAL CTA */}
+                {/* =====================================================
+                    FINAL CTA
+                ===================================================== */}
+
                 <section className="final-cta">
                   <div className="final-grid" />
 
@@ -856,13 +1081,19 @@ const App = () => {
                       className="button button-primary"
                     >
                       Get in touch
-                      <span>↗</span>
+                      <span>
+                        ↗
+                      </span>
                     </Link>
                   </div>
                 </section>
               </main>
             }
           />
+
+          {/* =====================================================
+              OTHER ROUTES
+          ===================================================== */}
 
           <Route
             path="/about"

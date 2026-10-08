@@ -4,11 +4,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+import {
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 import {
   faArrowLeft,
   faArrowUpRightFromSquare,
+  faFileLines,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./ProjectDetailPage.css";
@@ -20,6 +24,7 @@ const ProjectDetailPage = ({
   sections = [],
   tech = [],
   githubUrl,
+  paperUrl,
 }) => {
   useEffect(() => {
     AOS.init({
@@ -34,6 +39,7 @@ const ProjectDetailPage = ({
 
   return (
     <main className="project-detail-page">
+
       {/* HERO */}
       <section className="project-detail-hero">
         <div className="project-detail-grid-bg" />
@@ -127,51 +133,82 @@ const ProjectDetailPage = ({
             ))}
           </div>
 
-          {/* GITHUB REPOSITORY */}
-          {githubUrl && (
+          {/* RESEARCH LINKS */}
+          {(paperUrl || githubUrl) && (
             <section
               className="project-detail-repository"
               data-aos="fade-up"
             >
               <div className="project-detail-repository-copy">
                 <p className="project-detail-repository-label">
-                  SOURCE CODE
+                  RESEARCH ARTIFACTS
                 </p>
 
                 <h2>
-                  Explore the implementation
+                  Explore the project
                 </h2>
 
                 <p className="project-detail-repository-description">
-                  View the source code, implementation details,
-                  and project repository on GitHub.
+                  Read the research preprint and explore the implementation,
+                  source code, experiments, and supporting project materials.
                 </p>
               </div>
 
-              <a
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-repo-button"
-              >
-                <span className="project-repo-button-inner">
+              <div className="project-detail-repository-actions">
 
-                  <FontAwesomeIcon
-                    icon={faGithub}
-                    className="project-repo-github"
-                  />
+                {paperUrl && (
+                  <a
+                    href={paperUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-paper-button"
+                  >
+                    <span className="project-repo-button-inner">
+                      <FontAwesomeIcon
+                        icon={faFileLines}
+                        className="project-paper-icon"
+                      />
 
-                  <span className="project-repo-button-text">
-                    View GitHub Repository
-                  </span>
+                      <span className="project-repo-button-text">
+                        Read Preprint
+                      </span>
 
-                  <FontAwesomeIcon
-                    icon={faArrowUpRightFromSquare}
-                    className="project-repo-arrow"
-                  />
+                      <FontAwesomeIcon
+                        icon={faArrowUpRightFromSquare}
+                        className="project-repo-arrow"
+                      />
+                    </span>
+                  </a>
+                )}
 
-                </span>
-              </a>
+                {githubUrl && (
+                  <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-repo-button"
+                  >
+                    <span className="project-repo-button-inner">
+
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="project-repo-github"
+                      />
+
+                      <span className="project-repo-button-text">
+                        View GitHub Repository
+                      </span>
+
+                      <FontAwesomeIcon
+                        icon={faArrowUpRightFromSquare}
+                        className="project-repo-arrow"
+                      />
+
+                    </span>
+                  </a>
+                )}
+
+              </div>
             </section>
           )}
 

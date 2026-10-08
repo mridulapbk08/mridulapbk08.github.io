@@ -24,9 +24,9 @@ const Footer = () => {
           </div>
 
           <p>
-            Software engineer and researcher interested in distributed
-            systems, cloud computing, backend engineering, and reliable
-            software systems.
+            Software engineer and researcher working across trustworthy AI,
+            software reliability, autonomous repair, distributed systems,
+            and cloud-based software infrastructure.
           </p>
 
           <span className="footer-location">
@@ -60,7 +60,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://github.com/mridulapbk?tab=repositories"
+            href="https://github.com/mridulapbk08"
             target="_blank"
             rel="noopener noreferrer"
           >

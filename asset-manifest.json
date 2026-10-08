@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.372ba40a.css",
-    "main.js": "/static/js/main.b8bcda64.js",
+    "main.js": "/static/js/main.4821e94e.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/face_mask_tracker.png": "/static/media/face_mask_tracker.bc23d06e87ee339d127f.png",
     "static/media/solutions.png": "/static/media/solutions.6d2a96dba5c1fe155a48.png",
@@ -11,6 +11,7 @@
     "static/media/accenture.png": "/static/media/accenture.d57c85164588f991a59a.png",
     "static/media/social-media.webp": "/static/media/social-media.a9f1e43e758f07c67738.webp",
     "static/media/AzureAdministrator_Certification.png": "/static/media/AzureAdministrator_Certification.26424c5867cca18eaf2f.png",
+    "static/media/programming.jpg": "/static/media/programming.8427d48035563e7cf0a8.jpg",
     "static/media/AzureFundamentals_Certification.png": "/static/media/AzureFundamentals_Certification.06fd920824dff8020d66.png",
     "static/media/Mridula_Prabhakar.jpg": "/static/media/Mridula_Prabhakar.c86c2604eeaf8f10ea0c.jpg",
     "static/media/cars.webp": "/static/media/cars.5e3618e75f52801f0054.webp",
@@ -18,14 +19,15 @@
     "static/media/proshop.webp": "/static/media/proshop.f24fa6fe26ca0a0d0639.webp",
     "static/media/cloud.webp": "/static/media/cloud.7a54692c7b5682b26d4f.webp",
     "static/media/GCPCerti.jpeg": "/static/media/GCPCerti.fec545c2301dbef234e6.jpeg",
+    "static/media/software.avif": "/static/media/software.8b91dc00c6f0a3b82184.avif",
     "static/media/contact_me.webp": "/static/media/contact_me.b47fe8d69d2069a27cda.webp",
     "index.html": "/index.html",
     "main.372ba40a.css.map": "/static/css/main.372ba40a.css.map",
-    "main.b8bcda64.js.map": "/static/js/main.b8bcda64.js.map",
+    "main.4821e94e.js.map": "/static/js/main.4821e94e.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.372ba40a.css",
-    "static/js/main.b8bcda64.js"
+    "static/js/main.4821e94e.js"
   ]
 }

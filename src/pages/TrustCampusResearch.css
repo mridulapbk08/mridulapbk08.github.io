@@ -1,0 +1,172 @@
+
+.trust-research-showcase {
+  background: #f6f8fb;
+  padding: 0 0 96px;
+  color: #172034;
+}
+
+.trust-research-container {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  border-top: 1px solid #dee4ed;
+  padding-top: 54px;
+}
+
+.trust-research-kicker {
+  color: #7469e5;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+}
+
+.trust-research-heading h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  letter-spacing: -0.04em;
+  margin: 12px 0;
+}
+
+.trust-research-heading > p:last-child {
+  max-width: 760px;
+  color: #687487;
+  line-height: 1.8;
+  font-size: 0.94rem;
+}
+
+.trust-research-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.trust-research-metrics > div {
+  border: 1px solid #dee5f0;
+  background: #fff;
+  border-radius: 17px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trust-research-metrics strong {
+  font-size: 2rem;
+  letter-spacing: -0.06em;
+  font-family: "Manrope", sans-serif;
+}
+
+.trust-research-metrics span {
+  color: #677489;
+  font-size: 0.82rem;
+}
+
+.trust-research-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.trust-research-figure {
+  margin: 0;
+  min-width: 0;
+  border: 1px solid #dfe5ed;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(24, 39, 66, 0.045);
+}
+
+.trust-research-figure a {
+  display: block;
+  overflow: hidden;
+}
+
+.trust-research-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.2s ease;
+}
+
+.trust-research-figure a:hover img {
+  transform: scale(1.025);
+}
+
+.trust-research-figure figcaption {
+  color: #526078;
+  padding: 15px 17px;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+.trust-research-caveat {
+  margin: 30px 0 20px;
+  padding: 20px 24px;
+  border-left: 4px solid #b98b23;
+  background: #fff9e9;
+  color: #5b4a2f;
+  line-height: 1.75;
+  border-radius: 7px;
+}
+
+.trust-research-github {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 19px;
+  color: #fff;
+  background: #171f36;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.trust-research-github:hover {
+  background: #39346e;
+  color: #fff;
+}
+
+.trust-research-disclaimer {
+  margin-top: 19px;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #788397;
+}
+
+@media (max-width: 700px) {
+  .trust-research-container {
+    width: calc(100% - 28px);
+  }
+
+  .trust-research-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-research-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .trust-research-metrics > div {
+    padding: 15px;
+  }
+
+  .trust-research-metrics strong {
+    font-size: 1.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-research-figure img,
+  .trust-research-github {
+    transition: none;
+  }
+
+  .trust-research-figure a:hover img {
+    transform: none;
+  }
+}
